@@ -1,6 +1,9 @@
 ---
-name: "document-governance-artifacts"
-description: "Create or revise governance artifact contracts, templates, and fictional examples without issuing operational approvals."
+name: document-governance-artifacts
+description: Create or revise governance artifact contracts, templates, and fictional examples without issuing operational approvals.
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Document governance artifacts

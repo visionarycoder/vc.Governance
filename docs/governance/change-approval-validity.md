@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Change and approval validity"
-description: "Define when changes require approval reassessment, reaffirmation, or revocation."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Change and approval validity
+description: Define when changes require approval reassessment, reaffirmation, or revocation.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Change and approval validity
@@ -36,7 +39,7 @@ These states are derived for the requested use. Preserve the issued decision and
 5. Perform the regeneration, build, review, integration, and test work required by the recorded impact assessment. Bind new evidence to the actual revised context.
 6. Have the PM recheck the affected assignment and its dependencies before resuming work. A local design decision does not approve changed schedule or cost commitments.
 
-The Solution Architect and PM assess project consequences together (p. 194). Changed scope requires evaluating duration and cost and presenting the new commitments for management acceptance (p. 405). The CEO accepts within human-owner bounds; changes beyond those bounds reach the human owner.
+The Solution Architect and PM assess project consequences together (p. 194). Changed scope requires evaluating duration and cost and presenting the new commitments for management acceptance (p. 405). Before CEO acceptance of the SDP, the human owner approves explicit project-specific commitment limits. The CEO accepts changed commitments only within that envelope. Missing, ambiguous, or exceeded limits block CEO acceptance and route the decision to the human owner. The CEO and human owner are the same human actor acting under distinct authority capacities; see [GOV-OD11–GOV-OD12](owner-decisions-2026-11-11.md).
 
 ## Change-to-evidence routing
 
@@ -48,7 +51,7 @@ The Solution Architect and PM assess project consequences together (p. 194). Cha
 | Test plan, harness expectations, or test environment | Test Architect; escalate changed upstream requirements/design to their owner | Coverage, test implementation, prior runs and dependent phase exits |
 | Code, generator output, package, registration, or runtime dependency | Applicable architect and existing implementation-review route | Build, code review, integration, runtime tests and affected interactions |
 | Bounded architect instruction | Issuing Application/Test Architect inside supplied bounds; SA decisions obtain CEO approval | Assignment applicability, instructions and the actual artifacts being changed |
-| Schedule, resources, scope, dependencies, rates, or cost commitments | SA/PM assess and redesign; CEO/human owner accepts changed commitments | Selected SDP, assignments, rate baseline, forecasts and reporting context |
+| Schedule, resources, scope, dependencies, rates, or cost commitments | SA/PM assess and redesign; CEO accepts within the approved project envelope, or human owner decides an out-of-envelope commitment in human-owner capacity | Selected SDP, owner-approved limit decision, assignments, rate baseline, forecasts and reporting context |
 | Framework rules, authority delegation, or adopted governance baseline | Human owner controls amendments; apply recorded adoption/effectivity scope | Required decisions, gate eligibility, bounded exceptions and affected permissions |
 
 A change in one domain does not confer approval in another. Application/Test Architects cannot revise higher-level guidelines by issuing new instructions. No ordinary acceptance waives a directive or an explicit absolute source prohibition. Every allowable guideline departure requires human-owner approval.
@@ -87,4 +90,4 @@ PM reporting preserves history and consumed cost. The current applicable complet
 
 Use existing [artifact contracts](../artifacts/README.md): change-request for impact/scope, review-record for no-impact or substantive findings, decision-record for authorized acceptance/change, and assignment/verification/phase records for the resulting work and evidence. This policy does not change the existing core schema or add a universal approval role.
 
-The [acceptance fixtures](../artifacts/lifecycle-validity-cases.json) and [validation report](../artifacts/lifecycle-validity-validation.json) document policy checks, not a deployed identity or permission system. Runtime implementations must resolve evidence and authority independently; a fixture or a role claim cannot authorize real work.
+The [acceptance fixtures](../artifacts/lifecycle-validity-cases.json) and [validation report](../artifacts/lifecycle-validity-validation.json) document policy checks, not a deployed identity or permission system. The report is bound to the policy and fixture hashes it records and predates GOV-OD11–GOV-OD12; it does not validate the current project-envelope checks. Runtime implementations must resolve evidence and authority independently; a fixture or a role claim cannot authorize real work.

@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Repository-local agent skills"
-description: "Route governance documentation and coordination tasks to focused skills."
-document-type: "index"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Repository-local agent skills
+description: Route governance documentation and coordination tasks to focused skills.
+document-type: index
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Repository-local agent skills

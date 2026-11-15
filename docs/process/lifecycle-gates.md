@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Lifecycle gate criteria"
-description: "Define required evidence and permitted actions at each lifecycle gate."
-document-type: "process"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Lifecycle gate criteria
+description: Define required evidence and permitted actions at each lifecycle gate.
+document-type: process
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Lifecycle gate criteria
@@ -25,7 +28,7 @@ Gate results do not create new roles or approval channels. Use existing review, 
 | Gate | Required inputs and successful evidence | Permitted action / unsuccessful result |
 | --- | --- | --- |
 | GATE-BASELINE | Reviewed business inputs, system requirements, architecture and technology bounds, valid delegations, and CEO approval of SA-owned decisions | Design the project within those bounds. Resolve missing or disputed inputs with their owners. |
-| GATE-SDP | System design; designed project options, activities/network, resource/calendar and cost basis, risk and quality work; management acceptance of a feasible selected option within human-owner bounds | PM may assign main construction. An unsigned, unaffordable, or unaccepted option does not authorize main work. |
+| GATE-SDP | System design; designed project options, activities/network, resource/calendar and cost basis, risk and quality work; explicit human-owner-approved project limits; management acceptance by the CEO within those limits or a human-owner-capacity decision for an out-of-envelope commitment | PM may assign main construction after an authorized decision. Missing or ambiguous limits block acceptance. An out-of-envelope proposal remains blocked until the human owner approves revised limits and commitments or rejects it. |
 | GATE-SRS | Exact service requirement spec, successful architect review and acceptance, resolved behavioral ambiguity | Test planning and bounded exploration/detailed design may proceed on parallel paths under their assignments. Failed review returns to the SRS. |
 | GATE-EXPLORE | Reviewed SRS and PM assignment identifying questions, allowed experiments, constraints, and designer feedback | Perform some construction for design insight. Return findings to the Application Architect; do not claim production readiness or waive detailed-design review. |
 | GATE-DESIGN | Detailed design and contracts within the system design; successful Solution Architect review; Test Architect input; discovered refinements resolved | Detailed Design phase can complete. Prepare handoff; full construction still requires SDP and PM authorization. Failure returns to detailed design. |
@@ -81,4 +84,4 @@ Cross-domain disputes follow the established three-round procedure. Failed revie
 
 ## Verification scope
 
-The [acceptance fixtures](../artifacts/lifecycle-validity-cases.json) specify abstract positive and negative gate cases for future implementations. The [validation report](../artifacts/lifecycle-validity-validation.json) distinguishes policy/fixture checks from operational identity, byte verification, and permission enforcement. The reusable framework does not deploy a gate service here.
+The [acceptance fixtures](../artifacts/lifecycle-validity-cases.json) specify abstract positive and negative gate cases for future implementations, including the project commitment envelope. The [validation report](../artifacts/lifecycle-validity-validation.json) records results against the exact policy and fixture hashes listed in that report; its 2026-11-08 results predate the current envelope predicates and do not validate them. It distinguishes policy/fixture checks from operational identity, byte verification, and permission enforcement. The reusable framework does not deploy a gate service here.

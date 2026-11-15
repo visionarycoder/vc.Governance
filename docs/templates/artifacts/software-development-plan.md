@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Project alternatives and selected SDP template"
-description: "Define the fields and approval route for project alternatives and selected sdp."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Project alternatives and selected SDP template
+description: Define the fields and approval route for project alternatives and selected sdp.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Project alternatives and selected SDP template
@@ -27,15 +30,32 @@ Follow the [common artifact contract](../../artifacts/README.md) and [schema](..
 | `rate_baseline` | object | Reference the exact approved resource-rate version. Include repository, identity, revision, path, and byte hash. |
 | `quality_activities` | array | List planned review, test, integration, regression, and prevention activities. |
 | `phase_weight_basis` | string | State the method used to assign consistent phase weights. |
-| `within_owner_bounds` | boolean | State whether the proposed action is within the human-owner delegation. |
-| `management_decision` | array | Reference management acceptance of the selected option and commitments. Each entry is an exact revision-bound reference. |
+| `within_owner_bounds` | boolean | State whether the proposed option and commitments fit the exact human-owner-approved project envelope. |
+| `management_decision` | array | Reference management acceptance of the selected option and commitments, including its authority basis. Each entry is an exact revision-bound reference. |
 
 ## Review and approval
 
-Accountable owner: `solution-architect`. Approval route: `ceo`.
+Accountable owner: `solution-architect`. Approval route: CEO / Visionary within
+the approved project envelope; Human owner for an out-of-envelope commitment.
 
 Required review roles: `project-manager`, `product-owner`, `test-architect`, `qa`.
 
-Architect designs the project; CEO chooses and accepts within human-owner bounds; beyond bounds requires human owner.
+The Solution Architect designs the project. The human owner approves the
+project-specific envelope before the CEO accepts the SDP. The CEO accepts only
+within that envelope. The human owner decides out-of-envelope proposals in
+human-owner capacity.
+
+Before CEO acceptance, the human owner approves explicit project-specific limits
+for applicable scope, cost, schedule, and resource commitments. Record the
+envelope in a revision-bound `decision-record` on the exact SDP revision. Its
+`accept-artifact` decision must identify the human owner as decider, and its
+reason must limit approval to the envelope; it does not select the option or
+accept commitments. The CEO's separate `select-project-option` decision
+references the envelope decision as authority evidence and identifies the
+capacity used. A boolean `within_owner_bounds` without this evidence is
+insufficient. Missing, ambiguous, or exceeded limits block CEO acceptance and
+require a human-owner-capacity decision. The owner may reject the proposal or
+approve revised limits and commitments in a new revision-bound decision. No
+global numeric caps apply.
 
 Use the [decision matrix](../../governance/decision-and-approval-matrix.md) to resolve authority and independent review. An empty list in an example does not waive required operational evidence.

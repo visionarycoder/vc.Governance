@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Enforcement boundaries"
-description: "Define the access and integration controls needed to preserve decision authority."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Enforcement boundaries
+description: Define the access and integration controls needed to preserve decision authority.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Enforcement boundaries
@@ -48,7 +51,7 @@ The independent gate must assess the exact submitted implementation revision aga
 
 An affected requirement or design change must trigger reassessment of the dependent work and prior evidence. The precise rules for determining which approvals must be renewed need definition; an unrelated change need not reopen the whole project.
 
-The selected SDP and its current approved revisions are controlled inputs too. Protect the activity network, resource assignments, assumptions, phase weights, and cost baselines against worker changes. Scope adjustments must return to the business owner and the architect/Project Manager loop before changed commitments are accepted (pp. 194 and 405).
+The selected SDP and its current approved revisions are controlled inputs too. Protect the activity network, resource assignments, assumptions, phase weights, cost baselines, and human-owner-approved project commitment envelope against worker changes. Verify CEO acceptance against the exact envelope revision. Scope adjustments must return to the business owner and the architect/Project Manager loop before changed commitments are accepted (pp. 194 and 405).
 
 Protect the independent token-usage ledger and rate versions described in [token based costing](../process/token-costing.md). A worker cannot erase consumption, change a rate baseline, or count resource consumption as earned completion.
 
@@ -69,6 +72,34 @@ Before claiming enforcement, demonstrate that:
 ## Current state
 
 These protections have not been deployed or tested. The current authoring session has broad local permissions. Repository instructions and this document communicate the desired boundaries. They do not create them. No changes to host permissions, repository protections, sibling applications, or execution environments have been made.
+
+## Implementation handoff and acceptance
+
+This document is the governance handoff, not a work assignment or permission
+to change another repository or platform. Reusable mechanisms belong in
+vc.Ifx; permission provisioning belongs to the selected execution platform.
+The [repository ownership policy](repository-ownership.md) assigns technical
+design, verification planning, and project assignment responsibilities.
+
+Before implementation, the human owner and Solution Architect must select the
+execution platform and target scope. The implementation then needs its
+approved detailed design, Test Architect verification plan, and current
+Project Manager assignment under the normal approval routes. The assignment
+must identify the actual identities, tools, protected resources, independent
+gate, and deployment scope to be tested. Platform-specific permissions and
+credentials remain unselected until that work is designed and approved.
+
+Acceptance requires successful evidence for every scenario in
+[Verification scenarios](#verification-scenarios), bound to the tested
+revisions, identities, resources, and environment. The Test Architect approves
+the verification report after required review. Missing evidence blocks
+acceptance; a failed criterion fails it. Resolve blocking findings and
+reassess affected evidence before claiming enforcement. Lifecycle passage and
+this handoff do not authorize deployment or live operation.
+
+Platform selection, identity isolation, and independent integration remain
+open decisions. See [GOV-OD15](../governance/owner-decisions-2026-11-11.md)
+and [ADR 0005](../adr/0005-enforcement-handoff-and-deployment-boundary.md).
 
 ## Technical baseline controls
 

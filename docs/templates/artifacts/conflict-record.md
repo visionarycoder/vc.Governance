@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Leadership dispute and escalation template"
-description: "Define the fields and approval route for leadership dispute and escalation."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Leadership dispute and escalation template
+description: Define the fields and approval route for leadership dispute and escalation.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Leadership dispute and escalation template

@@ -1,6 +1,9 @@
 ---
-name: "record-governance-decisions"
-description: "Write ADRs and decision documentation that distinguish adopted owner decisions from proposals and artifact approvals."
+name: record-governance-decisions
+description: Write ADRs and decision documentation that distinguish adopted owner decisions from proposals and artifact approvals.
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Record governance decisions

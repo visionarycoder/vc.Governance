@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.3.0",
   "status": "Acceptance obligations for future independent validators; not an implemented authorization engine.",
   "checks": [
     {
@@ -163,6 +163,30 @@
       "validation_layer": "operational",
       "requirement": "Keep historical reports and decisions immutable while showing current rework and validity.",
       "rejection_case": "Do not erase consumed effort or represent unsupported phase credit as current completion."
+    },
+    {
+      "id": "GOV-C28",
+      "validation_layer": "operational",
+      "requirement": "Authenticate the CEO and human-owner capacities to the same human actor and validate each decision under the capacity authorized for its action.",
+      "rejection_case": "Reject a CEO-agent identity, a role claim without authentication, or an approval that relies on identity overlap to bypass the required authority capacity or independent critique."
+    },
+    {
+      "id": "GOV-C29",
+      "validation_layer": "operational",
+      "requirement": "Require an exact, human-owner-approved, project-specific commitment envelope before CEO acceptance of an SDP or changed commitment; verify the proposed commitment against the recorded limits.",
+      "rejection_case": "Reject CEO acceptance outside the envelope. Block pending out-of-envelope proposals until the human owner decides and records any revised limits and commitments. Do not substitute global numeric caps."
+    },
+    {
+      "id": "GOV-C30",
+      "validation_layer": "operational",
+      "requirement": "Route QA findings directly to the human owner when the Solution Architect is implicated or does not provide a required response; also route a finding implicating the human owner/CEO directly to that owner in human-owner capacity. Require a competent independent reviewer appointed by the human owner while preserving the owner's response authority. When the human owner/CEO is implicated, prohibit self-review. If no qualified reviewer is available, keep affected work held and the owner-implicated finding unresolved.",
+      "rejection_case": "Reject an SA-only review of a finding implicating the SA, a human owner's self-review of their own conduct, or affected work proceeding with an unresolved owner-implicated finding or without a qualified independent reviewer."
+    },
+    {
+      "id": "GOV-C31",
+      "validation_layer": "operational",
+      "requirement": "Require selected platform scope, approved detailed design and verification plan, and a current PM assignment before platform-specific enforcement work. Claim deployed enforcement only after successful evidence for every approved verification scenario is bound to the actual identities, tools, protected resources, revisions, and environment.",
+      "rejection_case": "Reject a claim of enforcement based only on documentation or fixtures, or implementation/deployment without selected platform scope and an approved assignment. Missing evidence blocks acceptance; any failed scenario fails acceptance."
     }
   ]
 }

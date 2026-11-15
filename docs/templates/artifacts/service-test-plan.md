@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Service test plan template"
-description: "Define the fields and approval route for service test plan."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Service test plan template
+description: Define the fields and approval route for service test plan.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Service test plan template

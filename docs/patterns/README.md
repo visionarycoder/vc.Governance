@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Implementation pattern catalog"
-description: "Index pattern requirements and distinguish required policies from design candidates."
-document-type: "index"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Implementation pattern catalog
+description: Index pattern requirements and distinguish required policies from design candidates.
+document-type: index
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Implementation pattern catalog

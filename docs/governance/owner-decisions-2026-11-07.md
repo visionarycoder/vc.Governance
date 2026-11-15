@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Owner decisions: approvals and artifact contracts"
-description: "Record the human owner’s decisions on artifact authority and approval."
-document-type: "owner-decision"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Owner decisions: approvals and artifact contracts
+description: Record the human owner’s decisions on artifact authority and approval.
+document-type: owner-decision
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Owner decisions: approvals and artifact contracts
@@ -22,5 +25,10 @@ These decisions record the human owner's answers during construction of the [dec
 | GOV-OD06 | Test Architect approves system test plans and verification reports; Solution Architect approves technical integration acceptance | Preserve independent review; neither sign-off grants deployment or changed-commitment authority |
 
 Operational interpretation of GOV-OD04: authorship alone never creates independent critique. Preserve the established Solution Architect review of detailed design before handoff and the mandatory Application Architect/Test Agent code-review critics. An instruction change that alters an upstream input must use that input's approval route.
+
+The human owner clarified GOV-OD02 on 2026-11-11. The CEO and human owner are
+the same human actor under distinct authority capacities; project commitment
+bounds are explicit, project-specific, and recorded before CEO acceptance. See
+[GOV-OD11–GOV-OD12](owner-decisions-2026-11-11.md).
 
 These decisions resolve the questions raised for this matrix. Runtime identities, credentials, evidence storage, and enforcement implementation remain separate open decisions; they are not implied by the named logical roles.

@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Component detailed design and contracts template"
-description: "Define the fields and approval route for component detailed design and contracts."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Component detailed design and contracts template
+description: Define the fields and approval route for component detailed design and contracts.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Component detailed design and contracts template
@@ -26,6 +29,12 @@ Follow the [common artifact contract](../../artifacts/README.md) and [schema](..
 | `dependency_constraints` | array | State permitted dependencies and prohibited boundary bypasses. |
 | `testability` | string | Explain how the design permits the required verification. |
 | `open_questions` | array | List unresolved design questions and the work they affect. |
+
+## DTO changes in a developer handoff
+
+For an approved extension to a service-boundary DTO, describe it in the affected operation's `inputs` or `outputs` entries under `contracts`. Identify the DTO, field and type, meaning, required or optional status, behavior when absent, and applicable validation, serialization and compatibility expectations. State the interface and operation signatures to preserve. Describe internal DTO changes in `internal_design`. Record how to verify the behavior in `testability`.
+
+The [Work Assignment](work-assignment.md) identifies which reviewed changes are in scope and which paths the developer may edit. The [Developer agent prompt](../developer-agent-prompt.md) consumes both records.
 
 ## Review and approval
 

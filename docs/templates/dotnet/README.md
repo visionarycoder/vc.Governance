@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "C# technical-policy templates"
-description: "Define controlled adoption of reusable C# quality-policy templates."
-document-type: "index"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: C# technical-policy templates
+description: Define controlled adoption of reusable C# quality-policy templates.
+document-type: index
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # C# technical-policy templates

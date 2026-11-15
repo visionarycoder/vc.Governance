@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Supporting-pattern review"
-description: "Record examined supporting material and unresolved pattern-selection questions."
-document-type: "research"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Supporting-pattern review
+description: Record examined supporting material and unresolved pattern-selection questions.
+document-type: research
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Supporting-pattern review

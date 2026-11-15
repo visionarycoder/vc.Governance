@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Framework and implementation ownership"
-description: "Assign governance and implementation artifacts to their distinct repositories."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Framework and implementation ownership
+description: Assign governance and implementation artifacts to their distinct repositories.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Framework and implementation ownership
@@ -39,6 +42,12 @@ The following existing specifications are inputs to vc.Ifx detailed design and i
 Use these stable identifiers in tooling requirements, diagnostics, tests, and verification evidence. The vc.Ifx design must map existing projects and capabilities before creating new ones. Reuse suitable existing mechanisms. Do not infer that every catalog pattern is mandatory, that all business/UI code belongs in vc.Ifx, or that implementing an analyzer establishes permission enforcement.
 
 The Solution Architect remains accountable for technical boundaries. The Application Architect creates the detailed tooling design; the Test Architect defines verification; the Project Manager plans and assigns the work. Unresolved design choices remain visible until the correct owner decides them.
+
+The [enforcement handoff](enforcement-boundaries.md) defines required controls
+and acceptance evidence but is not a work assignment. Platform selection,
+target scope, and a current PM assignment are prerequisites to implementation.
+No runtime enforcement or deployment is claimed until the platform-specific
+controls are deployed and independently verified.
 
 ## Current state
 

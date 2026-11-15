@@ -1,6 +1,9 @@
 ---
-name: "review-agentic-workflow-docs"
-description: "Review workflow documentation for Method fidelity, approval boundaries, artifact consistency, and actionable handoffs."
+name: review-agentic-workflow-docs
+description: Review workflow documentation for Method fidelity, approval boundaries, artifact consistency, and actionable handoffs.
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Review agentic workflow documentation

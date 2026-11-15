@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Design standard"
-description: "Map every Appendix C directive and guideline to its source."
-document-type: "standard"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Design standard
+description: Map every Appendix C directive and guideline to its source.
+document-type: standard
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Design standard

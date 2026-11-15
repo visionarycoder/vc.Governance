@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Roles and decisions"
-description: "Assign design, business, project, review, and escalation responsibilities."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Roles and decisions
+description: Assign design, business, project, review, and escalation responsibilities.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Roles and decisions
@@ -27,12 +30,27 @@ Book source: [Righting Software](https://www.amazon.com/dp/0136524036). See [sys
 | Project Manager | Execution of the selected project design, assignments, scheduling, tracking, status, and organizational coordination | Assigns actual workers and requests status; does not replace the architect as project designer |
 | Application Architect | Detailed component design, contracts, developer approach review, and technical code review | Works within Solution Architect boundaries; consults the Solution Architect for changes to those boundaries |
 | Test Architect | Design of testing for the system and detailed designs, test requirements, and direction of test development | Cannot redefine business requirements, component contracts, architecture, or higher-level standards to make tests pass |
-| QA | Defect prevention, process quality, standards, procedures, root-cause analysis, and process metrics | Dedicated role reporting to the Solution Architect, as chosen by the human owner; does not acquire authority to change upstream bounds |
+| QA | Defect prevention, process quality, standards, procedures, root-cause analysis, and process metrics | Reports to the Solution Architect by default; uses the human-owner escalation route when a finding implicates the SA or the SA does not provide a required response |
 | Implementation Developer | Construction of an assigned component and its white-box test client | Has implementation discretion only within approved requirements, component boundaries, contracts, and detailed design |
 | Test Developer | Implementation of the Test Architect's requirements, test harnesses, and test automation | Cannot weaken test requirements or acceptance expectations to fit observed implementation behavior |
 | Test Agent | Execution of assigned verification and independent critique in code review | Reports defects and evidence; does not approve changes to higher-level requirements or designs |
 
 Test Developer and Test Agent describe work responsibilities; whether separate worker instances perform them is an execution decision. QA, test engineering, and test execution remain distinct functions. RS pp. 207-209 and 380-382 distinguishes them; the owner's Test Architect and QA reporting arrangement is an organizational assignment.
+
+For a finding that implicates the Solution Architect, or when the SA does not
+provide a required response, QA may go directly to the human owner in
+human-owner capacity. If the finding implicates the human owner / CEO, QA also
+sends it directly to the owner in human-owner capacity. The owner appoints a
+competent independent reviewer and decides the response; the owner cannot
+review their own conduct. When no qualified reviewer is available for an
+owner-implicated finding, hold affected work and record the finding as
+unresolved. See [GOV-OD13–GOV-OD14](owner-decisions-2026-11-11.md).
+
+The CEO and human owner are the same human actor under the owner's
+[GOV-OD11 decision](owner-decisions-2026-11-11.md). They exercise distinct
+authority capacities; the CEO is not an agent. Escalations reach this human,
+and records identify the capacity authorizing the decision. This identity
+overlap does not create independent critique or change any role's authority.
 
 ## Leadership collaboration
 
@@ -65,11 +83,27 @@ The owner requires at most three discussion rounds before an unresolved leadersh
 
 Role-level disagreements first reach the appropriate decision owner. Cross-domain conflicts reach the leadership trio. If the trio cannot resolve the conflict within three rounds, it escalates to the CEO. Escalation is not permission to violate the standard, self-approve a departure, or proceed with the disputed change.
 
-The owner has defined a completed round: all three leadership members record positions on the same dispute, followed by a summary of the remaining disagreement. After three completed unresolved rounds, escalate to the CEO. The [decision matrix](decision-and-approval-matrix.md) and [conflict record template](../templates/artifacts/conflict-record.md) define the mechanics. Failed-review retries are not discussion rounds.
+The owner has defined a completed round: all three leadership members record positions on the same dispute, followed by a summary of the remaining disagreement. After three completed unresolved rounds, escalate to the CEO. The CEO is the same human actor as the human owner, so escalation reaches that person; use the authority capacity assigned to the disputed decision. The [decision matrix](decision-and-approval-matrix.md) and [conflict record template](../templates/artifacts/conflict-record.md) define the mechanics. Failed-review retries are not discussion rounds.
 
 ## Work assignment and review
 
 Only the Project Manager assigns work activities or asks developers for project status, following RS p. 149. Architect mentoring, technical questions, design reviews, and test feedback remain part of the work. They do not create a second assignment channel.
+
+For local Builder coordination, the Project Manager maintains the message board,
+creates and rehydrates agents, and prompts agents to check the board. Agents may
+message one another directly using stable project-scoped addresses. A message
+does not assign or transfer work. If it requires work from another agent, the
+Project Manager records the work and issues the applicable assignment. These
+conventions are recorded in [GOV-OD16](owner-decisions-2026-11-11.md) and
+described in the [local agent Builder workflow](../process/local-agent-builder.md).
+The Solution Architect, Product Owner, and Project Manager are long-running
+agents that poll the queue for messages addressed to their exact agent IDs.
+Requests for a new work item go to the Project Manager's address and identify
+the requested agent role, as recorded in [GOV-OD17](owner-decisions-2026-11-11.md).
+Under [GOV-OD18](owner-decisions-2026-11-11.md), agents poll immutable published
+message files, not just board rows. Only the Project Manager writes the
+rebuildable board summary. Acknowledgements and responses are separate linked
+message files; no recipient edits the original.
 
 The leading architect approves technical work. The Application Architect is a critic in code review, and a Test Agent is an additional independent critic, as directed by the owner. The Product Owner retains business acceptance; the Project Manager tracks completion against phase exits and the selected project design.
 
@@ -81,4 +115,4 @@ For agent workers, use [token based costing](../process/token-costing.md). Token
 
 ## Artifact-level authority
 
-Use the [decision and approval matrix](decision-and-approval-matrix.md) and [artifact contracts](../artifacts/README.md) for exact authorship, review, and sign-off routes. The Test Architect approves service/system test plans and verification reports after required review. The Solution Architect approves technical integration acceptance. The CEO accepts the SDP and changed commitments within human-owner bounds. Every guideline departure requires human-owner approval; directives remain non-waivable.
+Use the [decision and approval matrix](decision-and-approval-matrix.md) and [artifact contracts](../artifacts/README.md) for exact authorship, review, and sign-off routes. The Test Architect approves service/system test plans and verification reports after required review. The Solution Architect approves technical integration acceptance. Before CEO acceptance of an SDP, the human owner approves explicit project-specific commitment limits. The CEO accepts only within those limits; missing or ambiguous limits block acceptance. Every guideline departure requires human-owner approval; directives remain non-waivable.

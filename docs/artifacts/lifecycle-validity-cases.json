@@ -62,6 +62,10 @@
         "common.independenceVerified": true,
         "common.upstreamBoundsSatisfied": true,
         "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": true,
+        "sdp.commitmentAuthorityVerified": true,
+        "sdp.commitmentAuthorityVerified": true,
         "sdp.accepted": true
       },
       "expected_outcome": "pass",
@@ -78,6 +82,10 @@
         "common.independenceVerified": true,
         "common.upstreamBoundsSatisfied": true,
         "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": true,
+        "sdp.commitmentAuthorityVerified": true,
+        "sdp.commitmentAuthorityVerified": true,
         "sdp.accepted": true
       },
       "expected_outcome": "fail",
@@ -94,10 +102,130 @@
         "common.independenceVerified": true,
         "common.upstreamBoundsSatisfied": true,
         "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": true,
+        "sdp.commitmentAuthorityVerified": true,
+        "sdp.commitmentAuthorityVerified": true,
         "sdp.accepted": true
       },
       "expected_outcome": "blocked",
       "purpose": "Required evidence is scope-bound; non-prerequisite branch facts do not create extra gates."
+    },
+    {
+      "id": "GATE-SDP-outside-owner-envelope",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": false,
+        "sdp.commitmentAuthorityVerified": false,
+        "sdp.commitmentAuthorityVerified": false,
+        "sdp.accepted": true
+      },
+      "expected_outcome": "fail",
+      "purpose": "A CEO decision cannot accept project commitments that exceed the exact owner-approved envelope."
+    },
+    {
+      "id": "GATE-SDP-owner-envelope-unverified",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": null,
+        "sdp.commitmentsWithinEnvelope": true,
+        "sdp.commitmentAuthorityVerified": null,
+        "sdp.commitmentAuthorityVerified": null,
+        "sdp.accepted": true
+      },
+      "expected_outcome": "blocked",
+      "purpose": "Missing or unverified human-owner approval of the project envelope blocks CEO acceptance."
+    },
+    {
+      "id": "GATE-SDP-out-of-envelope-pending-owner",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": false,
+        "sdp.commitmentAuthorityVerified": null,
+        "sdp.accepted": null
+      },
+      "expected_outcome": "blocked",
+      "purpose": "An out-of-envelope proposal stays blocked while awaiting a human-owner-capacity decision."
+    },
+    {
+      "id": "GATE-SDP-out-of-envelope-owner-approved",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": false,
+        "sdp.commitmentAuthorityVerified": true,
+        "sdp.accepted": true
+      },
+      "expected_outcome": "pass",
+      "purpose": "An out-of-envelope proposal can pass only with the human owner's revision-bound decision and any revised envelope."
+    },
+    {
+      "id": "GATE-SDP-out-of-envelope-pending-owner",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": false,
+        "sdp.commitmentAuthorityVerified": null,
+        "sdp.accepted": null
+      },
+      "expected_outcome": "blocked",
+      "purpose": "An out-of-envelope proposal stays blocked while awaiting a human-owner-capacity decision."
+    },
+    {
+      "id": "GATE-SDP-out-of-envelope-owner-approved",
+      "kind": "gate",
+      "gate_id": "GATE-SDP",
+      "facts": {
+        "common.currentContext": true,
+        "common.referencesVerified": true,
+        "common.authorityVerified": true,
+        "common.independenceVerified": true,
+        "common.upstreamBoundsSatisfied": true,
+        "baseline.ready": true,
+        "sdp.ownerEnvelopeApproved": true,
+        "sdp.commitmentsWithinEnvelope": false,
+        "sdp.commitmentAuthorityVerified": true,
+        "sdp.accepted": true
+      },
+      "expected_outcome": "pass",
+      "purpose": "An out-of-envelope proposal can pass only with the human owner's revision-bound decision and any revised envelope."
     },
     {
       "id": "GATE-SRS-pass",

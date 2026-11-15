@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Bounded work assignment and handoff template"
-description: "Define the fields and approval route for bounded work assignment and handoff."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Bounded work assignment and handoff template
+description: Define the fields and approval route for bounded work assignment and handoff.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Bounded work assignment and handoff template
@@ -34,6 +37,10 @@ Follow the [common artifact contract](../../artifacts/README.md) and [schema](..
 | `permitted_outputs` | array | List the files, artifacts, or results the assignment permits. |
 | `completion_criteria` | array | State the evidence required to complete the assignment. |
 | `authorized_phase` | string | Name the lifecycle phase this assignment permits. |
+
+## Developer construction handoff
+
+For an assigned change to an existing component, use the [Developer agent prompt](../developer-agent-prompt.md). In `permitted_outputs`, identify the repository-relative files or explicitly bounded directories the developer may edit. Identify the component implementation and white-box test paths. Use `constraints` to state path exclusions, the assigned operation, preserved behavior, and any DTO extension in scope. For a service-boundary DTO extension, identify the contract and operation in the referenced accepted Detailed Design. The assignment scopes the approved extension and its edit paths. Design acceptance follows the Detailed Design approval route.
 
 ## Review and approval
 

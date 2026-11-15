@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Instructions for agents working on vc.Governance"
-description: "Direct agents to preserve repository scope, source authority, and approval requirements."
-document-type: "agent-instructions"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Instructions for agents working on vc.Governance
+description: Direct agents to preserve repository scope, source authority, and approval requirements.
+document-type: agent-instructions
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Instructions for agents working on vc.Governance
@@ -34,7 +37,7 @@ Keep ownership of system and project design with one accountable Solution Archit
 
 Do not report that a book was fully read when only excerpts were reviewed. Update the source review record when additional material has actually been examined. Extraction is not equivalent to reading or verifying diagrams and equations.
 
-These instructions communicate authority. They do not themselves provide tamper resistance. Do not claim technical enforcement until separately controlled permissions and integration checks have been implemented and verified.
+These instructions communicate authority. They do not themselves provide tamper resistance. Do not claim technical enforcement until separately controlled permissions and integration checks have been implemented and verified. Platform selection and a current PM assignment are prerequisites to implementation; the governance handoff does not authorize deployment or sibling-repository changes.
 
 The [Standard Technical English rules](docs/standards/rules.ste.md) and [JSON records](docs/standards/rules.json) are source-derived aids. Read their context and exception policies. Do not rewrite a rule, test, or approval requirement to make your own implementation pass. Their presence does not establish technical protection.
 
@@ -42,13 +45,28 @@ The [Standard Technical English rules](docs/standards/rules.ste.md) and [JSON re
 
 For technical implementation, follow the [Microsoft technical standard](docs/standards/microsoft-technical-standard.md) and [technical rule records](docs/standards/technical-rules.json). Use current official Microsoft guidance within the approved technology baseline. The owner prohibits underscore naming prefixes: use unprefixed fields, including static fields. Preserve original third-party source references. Workers cannot alter SDK selection, analyzers, build settings, or suppressions to make their own work pass. Current implementation guidance does not change Method boundaries.
 
+## Owner component design
+
+Apply the [owner architecture policy](docs/governance/owner-architecture-policy.md), including [internal component handlers](docs/standards/component-handlers.md). Every approved component delegates implementation details from its service implementation class to internal handlers. Handlers remain within the component's reviewed responsibility and do not bypass cross-component proxy requirements. This is an owner-selected constraint, not a rule attributed to Löwy.
+
 ## Component proxy boundary
 
 Follow the [mandatory proxy policy](docs/patterns/component-proxies.md) and [proxy rule records](docs/standards/proxy-rules.json). All calls between approved components require a DI-capable proxy. Without service-level separation, use a generated typed proxy. Do not implement reflection-based proxies. Dapr service invocation is accepted but not mandated. Internal collaborator calls are excluded. Workers cannot bypass the chain or change its governing inputs.
 
 ## Decision and artifact contracts
 
-Use the [decision matrix](docs/governance/decision-and-approval-matrix.md), [owner decisions](docs/governance/owner-decisions-2026-11-07.md), and [artifact contracts](docs/artifacts/README.md) for authorship, review, and approval. Solution Architect decisions obtain CEO approval. Application/Test Architects can adjust instructions within upstream bounds. Every guideline departure requires human-owner approval; directives remain non-waivable. Example records never authorize work. Schema-valid role claims do not authenticate an actor or grant permissions.
+Use the [decision matrix](docs/governance/decision-and-approval-matrix.md), [owner decisions (2026-11-07)](docs/governance/owner-decisions-2026-11-07.md) and [owner decisions (2026-11-11)](docs/governance/owner-decisions-2026-11-11.md), and [artifact contracts](docs/artifacts/README.md) for authorship, review, and approval. Solution Architect decisions obtain CEO approval. Application/Test Architects can adjust instructions within upstream bounds. Every guideline departure requires human-owner approval; directives remain non-waivable. Example records never authorize work. Schema-valid role claims do not authenticate an actor or grant permissions.
+
+The CEO and human owner are the same human actor under distinct authority
+capacities; there is no CEO agent. Escalations reach this human. The decision
+record must identify the capacity authorizing the action, and identity overlap
+does not satisfy independent critique. QA may escalate directly to the human
+owner when a finding implicates the Solution Architect or the SA does not
+provide a required response. If the owner is implicated, QA sends the finding
+directly to the owner in human-owner capacity; the owner cannot self-review,
+appoints an independent reviewer, and retains final authority. If no
+qualified reviewer is available, hold affected work and record an
+owner-implicated finding as unresolved.
 
 ## Lifecycle actions and acceptance
 
@@ -60,11 +78,13 @@ Detailed designs and contracts require Solution Architect review and acceptance,
 
 The Application Architect accepts implementation after successful critique by the Application Architect and an independent Test Agent. The Test Architect approves service/system test plans and verification reports after their required reviews. The Solution Architect separately accepts technical integration. Integration phase completion requires integration acceptance and successful plan-based verification of the same integrated context. The PM records binary phase completion; commits, effort, and tokens do not establish completion. Milestone acceptance includes its required project tests and Product Owner acceptance. No lifecycle gate independently authorizes deployment or live operation.
 
-When changes affect scope, resources, dependencies, schedule, or cost, the Solution Architect and PM assess project consequences. The CEO accepts revised commitments within human-owner bounds; beyond those bounds, escalate to the human owner. Apply the existing change and resume rules before resuming affected work.
+When changes affect scope, resources, dependencies, schedule, or cost, the Solution Architect and PM assess project consequences. Before CEO acceptance of an SDP, the human owner approves explicit project-specific limits for applicable scope, cost, schedule, and resources; there are no global numeric caps. The CEO accepts revised commitments only within those exact limits. Missing, ambiguous, or exceeded limits block CEO acceptance. The human owner decides out-of-envelope proposals in human-owner capacity and records any revised limits and commitments before affected work resumes. Apply the existing change and resume rules before resuming affected work.
 
 ## Governance documentation and current applicability
 
 Use the [table of contents](docs/toc.md) and [topic index](docs/index.md) for current documentation. Apply [lifecycle gates](docs/process/lifecycle-gates.md) and [change/approval validity](docs/governance/change-approval-validity.md) to the requested context. Preserve unaffected authorized work and the parallel STP/design paths. Unresolved source conflicts go directly to the human owner. Leadership disputes escalate after three completed unresolved rounds; each round requires the Solution Architect, Product Owner, and Project Manager positions on the same dispute and a summary of remaining disagreement. Failed reviews and test retries are correction loops, not discussion rounds. Do not restore owner-removed technical source copies merely to satisfy a stale reference; mark historical provenance and keep active links truthful.
+
+For project-local agent coordination, apply the [local agent Builder workflow](docs/process/local-agent-builder.md) and its [Markdown templates](docs/templates/builder/README.md). Senders publish separate immutable message files; acknowledgements and responses are separate linked files. Only the Project Manager writes the rebuildable board summary, prompts agents, and remains the formal assignment owner. The Solution Architect, Product Owner, and Project Manager are long-running pollers; agents discover published files whose `To` value matches their exact address, even when the summary is stale. Direct messages do not create assignments. Atomic publication requires a separately verified helper; these documents do not provide runtime identity or permission enforcement.
 
 ## Repository-local documentation skills
 

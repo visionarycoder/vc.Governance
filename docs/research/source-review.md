@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Source review"
-description: "Record the completed book review and its verification limits."
-document-type: "research"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Source review
+description: Record the completed book review and its verification limits.
+document-type: research
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Source review

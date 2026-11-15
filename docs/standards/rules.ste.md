@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Standard Technical English rules"
-description: "Provide source-linked Standard Technical English rule records."
-document-type: "standard"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Standard Technical English rules
+description: Provide source-linked Standard Technical English rule records.
+document-type: standard
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Standard Technical English rules

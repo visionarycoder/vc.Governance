@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Requirement, design, or commitment change template"
-description: "Define the fields and approval route for requirement, design, or commitment change."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Requirement, design, or commitment change template
+description: Define the fields and approval route for requirement, design, or commitment change.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Requirement, design, or commitment change template

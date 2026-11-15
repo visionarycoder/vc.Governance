@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "System and project design"
-description: "Define business analysis, system design, project alternatives, and SDP acceptance."
-document-type: "process"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: System and project design
+description: Define business analysis, system design, project alternatives, and SDP acceptance.
+document-type: process
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # System and project design
@@ -78,7 +81,7 @@ Reduce oversized activities or treat them as deliberately designed subprojects. 
 
 ## Decide at the SDP review
 
-Present a small set of feasible alternatives with duration, total cost, risk, complexity, resource requirements, and assumptions. Communicate in business terms. Show impractical alternatives when needed to explain why they should not be selected, and identify them as such. Include the option not to proceed. Management selects an option and signs the SDP before the main work begins. The Project Manager then assigns actual workers against the selected design. See pp. 151-153, 171, 303-305, 359-360 and 366-367.
+Present a small set of feasible alternatives with duration, total cost, risk, complexity, resource requirements, and assumptions. Communicate in business terms. Show impractical alternatives when needed to explain why they should not be selected, and identify them as such. Include the option not to proceed. Before CEO acceptance, the human owner approves explicit project-specific commitment limits for applicable scope, cost, schedule, and resources. The CEO accepts an option only within those limits. Missing, ambiguous, or exceeded limits block CEO acceptance. The human owner decides an out-of-envelope proposal in human-owner capacity and may reject it or approve revised limits and commitments through a new revision-bound decision. The human owner and CEO are the same human actor acting under distinct authority capacities. Management selects an option and signs the SDP before the main work begins. The Project Manager then assigns actual workers against the selected design. See pp. 151-153, 171, 303-305, 359-360 and 366-367.
 
 The normal starting point is construction after SDP review. Chapter 11, p. 279 discusses a bounded, architect-designed possibility of moving infrastructure and Client design into the front end, with explicit risks to the proceed-or-cancel decision. It is not a worker exemption from approval, and it does not authorize premature implementation of business features.
 

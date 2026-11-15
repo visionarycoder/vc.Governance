@@ -1,6 +1,9 @@
 ---
-name: "document-agentic-workflows"
-description: "Create or revise governance workflow documentation, lifecycle gates, and handoffs in vc.Governance."
+name: document-agentic-workflows
+description: Create or revise governance workflow documentation, lifecycle gates, and handoffs in vc.Governance.
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Document agentic workflows

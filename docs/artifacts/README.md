@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Governance artifact contracts"
-description: "Define the structure, evidence, and approval semantics of governance artifacts."
-document-type: "artifact-contract"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Governance artifact contracts
+description: Define the structure, evidence, and approval semantics of governance artifacts.
+document-type: artifact-contract
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Governance artifact contracts
@@ -56,7 +59,7 @@ An architect instruction record refines an assigned task; it cannot assign a dif
 4. The Solution Architect obtains CEO approval for its own decisions and baseline changes. The architect remains accountable for system and project design and performs the required technical review of delegated detailed designs. CEO approval does not replace architectural review.
 5. Application and Test Architects may revise agent instructions inside their provided bounds. A changed higher-level input goes to its owner. A detailed-design revision retains Solution Architect review before handoff; the within-bounds instruction rule is not a design-review bypass.
 6. Implementation and Test Developers cannot approve their own deliverables. An authorized design owner can issue bounded instructions without adding a new CEO gate for Application/Test Architect updates. Preserve the changed artifact's required reviews; an author's role change does not manufacture independent critique.
-7. CEO commitment decisions must remain inside recorded human-owner bounds. Outside those bounds, escalate to the human owner. Test Architect approval of a plan cannot authorize a weaker upstream requirement.
+7. Before CEO acceptance of an SDP, the human owner approves explicit, project-specific limits for applicable scope, cost, schedule, and resource commitments. There are no global numeric caps. The CEO accepts only within the exact approved envelope; missing or ambiguous limits block CEO acceptance. An out-of-envelope proposal remains blocked until the human owner decides in human-owner capacity and records any revised limits and commitments. The CEO and human owner are the same human actor acting under distinct authority capacities; record the capacity authorizing each action. Test Architect approval of a plan cannot authorize a weaker upstream requirement.
 8. Every guideline departure needs strong, unusual justification and explicit human-owner approval. Directives and the source's explicit absolute prohibitions cannot be waived. Twenty-operation contracts remain rejected; the guideline heading does not create an exception route.
 
 ## Change handling
@@ -75,4 +78,4 @@ The consumer must reject unknown contract versions, unresolved references, examp
 
 ## Lifecycle and approval use
 
-Apply the [gate criteria](../process/lifecycle-gates.md) and [approval-validity rules](../governance/change-approval-validity.md) when consuming these records. [Abstract acceptance cases](lifecycle-validity-cases.json) cover parallel branches, missing evidence, changed inputs, reaffirmation, revocation, and explicit freshness. [Validation results](lifecycle-validity-validation.json) separate those checks from runtime enforcement. The existing version 1.0.0 core schema is unchanged.
+Apply the [gate criteria](../process/lifecycle-gates.md) and [approval-validity rules](../governance/change-approval-validity.md) when consuming these records. [Abstract acceptance cases](lifecycle-validity-cases.json) cover parallel branches, missing evidence, changed inputs, reaffirmation, revocation, explicit freshness, and the project commitment envelope. [Validation results](lifecycle-validity-validation.json) are bound to their recorded policy and fixture hashes; the 2026-11-08 report predates GOV-OD11–GOV-OD12 and does not validate the current envelope checks. They separate policy checks from runtime enforcement. The existing version 1.0.0 core schema is unchanged.

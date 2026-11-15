@@ -1,6 +1,9 @@
 ---
-name: "governance-admin-assistant"
-description: "Prepare project governance status briefs, decision-routing summaries, and escalation packets using existing authority and artifact contracts."
+name: governance-admin-assistant
+description: Prepare project governance status briefs, decision-routing summaries, and escalation packets using existing authority and artifact contracts.
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Governance administrative assistance

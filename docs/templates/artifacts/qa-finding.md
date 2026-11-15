@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Prevention and root-cause finding template"
-description: "Define the fields and approval route for prevention and root-cause finding."
-document-type: "template"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Prevention and root-cause finding template
+description: Define the fields and approval route for prevention and root-cause finding.
+document-type: template
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Prevention and root-cause finding template
@@ -30,8 +33,16 @@ Follow the [common artifact contract](../../artifacts/README.md) and [schema](..
 
 Accountable owner: `qa`. Approval route: `qa`.
 
-Required review roles: `solution-architect`.
+Required review role: `solution-architect`, unless the finding implicates the SA
+or the SA does not provide a required response. In those cases, QA may escalate
+directly to the human owner, who appoints a competent independent reviewer and
+decides the response. If the finding implicates the human owner / CEO, the
+QA sends it directly to the owner in human-owner capacity. The owner cannot
+self-review, appoints an independent reviewer, and retains final decision
+authority. If no qualified reviewer is available for an owner-implicated
+finding, hold affected work and record the finding as unresolved.
 
-QA reports to SA. QA finding does not amend governing process or another owner’s design.
+QA reports to the SA by default. A QA finding does not amend governing process
+or another owner's design.
 
 Use the [decision matrix](../../governance/decision-and-approval-matrix.md) to resolve authority and independent review. An empty list in an example does not waive required operational evidence.

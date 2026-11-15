@@ -16,15 +16,19 @@
     "test-agent": "Test Agent"
   },
   "owner_decisions": {
+    "ceo_identity": "CEO and human owner are the same human actor under distinct authority capacities; no CEO agent exists.",
     "service_test_plan_approval": "test-architect",
     "service_test_plan_review": [
       "application-architect",
       "independent-test-reviewer fulfilled by test-agent"
     ],
-    "project_management_acceptance": "ceo within human-owner bounds; human-owner beyond bounds",
+    "project_management_acceptance": "CEO (same human actor as human owner, acting in CEO capacity) accepts within explicit human-owner-approved project limits; out-of-bounds or missing/ambiguous limits require a human-owner-capacity decision",
     "guideline_departure_approval": "human-owner",
     "architect_instruction_revision": "Application/Test Architects may adjust instructions within provided bounds; Solution Architect obtains CEO approval.",
-    "leadership_round": "Each trio member records a position on the same dispute and the remaining disagreement is summarized; unresolved after three completed rounds escalates to CEO."
+    "qa_escalation_when_sa_implicated_or_unresponsive": "human-owner",
+    "qa_escalation_when_human_owner_implicated": "qa sends the finding directly to the human owner in human-owner capacity",
+    "qa_escalation_reviewer": "competent independent reviewer appointed by the human owner; the owner retains response authority",
+    "leadership_round": "Each trio member records a position on the same dispute and the remaining disagreement is summarized; unresolved after three completed rounds escalates to the CEO, the same human actor as the human owner, under the authority capacity applicable to the issue."
   },
   "pending_questions": [],
   "rows": [
@@ -270,7 +274,7 @@
         "test-architect",
         "qa"
       ],
-      "approval_role": "ceo",
+      "approval_role": "ceo within approved envelope; human-owner for out-of-envelope commitments",
       "assignment_status": "owner_decision",
       "source": {
         "document": "https://www.amazon.com/dp/0136524036",
@@ -281,7 +285,7 @@
           367
         ]
       },
-      "basis_note": "Architect designs the project; CEO chooses and accepts within human-owner bounds; beyond bounds requires human owner."
+      "basis_note": "Architect designs the project; before SDP acceptance the human owner approves explicit project-specific commitment limits through a revision-bound GOV-A13 decision. CEO accepts within those limits; missing, ambiguous, or exceeded limits block CEO acceptance and require a human-owner-capacity decision. An out-of-envelope approval requires a new exact envelope decision. No global numeric caps."
     },
     {
       "id": "GOV-A11",
@@ -557,7 +561,7 @@
           150
         ]
       },
-      "basis_note": "Three completed discussion rounds maximum before CEO escalation; source conflict or framework amendment goes to human owner."
+      "basis_note": "Three completed discussion rounds maximum before escalation to the CEO, who is the same human actor as the human owner. Source conflict or framework amendment requires human-owner capacity."
     },
     {
       "id": "GOV-A22",
@@ -579,7 +583,7 @@
           382
         ]
       },
-      "basis_note": "QA reports to SA. QA finding does not amend governing process or another owner’s design."
+      "basis_note": "QA reports to the SA by default. If a finding implicates the SA or the SA does not provide a required response, QA may escalate directly to the human owner, who appoints a competent independent reviewer and decides the response. If the human owner/CEO is implicated, QA sends the finding directly to the owner in human-owner capacity; the owner cannot self-review, retains final decision authority, and must appoint an independent reviewer. If no qualified reviewer is available for an owner-implicated finding, hold affected work and record the issue as unresolved. A QA finding does not itself amend governing process or another owner’s design."
     },
     {
       "id": "GOV-A23",

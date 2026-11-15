@@ -1,22 +1,31 @@
 ---
-metadata-version: "1.0.0"
-title: "Decision and approval matrix"
-description: "Define authorship, review, and approval routes for each artifact type."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Decision and approval matrix
+description: Define authorship, review, and approval routes for each artifact type.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Decision and approval matrix
 
-Version 1.0.0. Applies to vc.Governance contracts, not as an instruction to modify another repository. The [machine-readable matrix](approval-matrix.json) and [owner decisions](owner-decisions-2026-11-07.md) distinguish source responsibilities from organizational sign-offs. The source is [Righting Software](https://www.amazon.com/dp/0136524036), especially pp. 148–153, 374–377, 380–382, 388–390, 405, and Appendix C.
+Version 1.0.0. Applies to vc.Governance contracts, not as an instruction to modify another repository. The [machine-readable matrix](approval-matrix.json) and [owner decisions](owner-decisions-2026-11-07.md) distinguish source responsibilities from organizational sign-offs. The [2026-11-11 owner decisions](owner-decisions-2026-11-11.md) clarify role identity and project commitment bounds. The source is [Righting Software](https://www.amazon.com/dp/0136524036), especially pp. 148–153, 374–377, 380–382, 388–390, 405, and Appendix C.
 
 ## Accountability and approval
 
 An accountable owner retains responsibility for content and integrity. An author prepares it. Critics review it. An approver decides a specific action within delegated scope. These functions are not interchangeable. Review participants are named by identity in the record; the matrix lists logical roles. A title or a field in JSON does not authenticate an identity.
 
 The Solution Architect owns both system and project design. Under the owner’s GOV-OD04 decision, its own decisions and baseline changes require CEO approval. This does not give the CEO authorship of architecture or remove the required architect review. Application Architects own detailed design within system bounds; Test Architects own test design within requirements/design bounds. The Project Manager alone assigns work and tracks execution.
+
+The CEO and human owner are the same human actor, acting under distinct
+authority capacities. The CEO is not an agent. Escalations reach this human;
+records must identify the capacity authorizing the action. The shared identity
+does not merge decision rights or satisfy an independent-critic requirement.
+See [GOV-OD11–GOV-OD12](owner-decisions-2026-11-11.md).
 
 ## Artifact routes
 
@@ -31,7 +40,7 @@ The Solution Architect owns both system and project design. Under the owner’s 
 | GOV-A07 [Component detailed design and contracts](../templates/artifacts/detailed-design.md) | Application Architect | Application Architect | Solution Architect, Test Architect | Solution Architect |
 | GOV-A08 [System test plan and harness design](../templates/artifacts/system-test-plan.md) | Test Architect | Test Architect, Test Developer | Solution Architect, Product Owner, Project Manager, Application Architect, Implementation Developer, Test Agent | Test Architect |
 | GOV-A09 [Service test plan](../templates/artifacts/service-test-plan.md) | Test Architect | Test Architect, Test Developer | Application Architect, Test Agent | Test Architect |
-| GOV-A10 [Project alternatives and selected SDP](../templates/artifacts/software-development-plan.md) | Solution Architect | Solution Architect | Project Manager, Product Owner, Test Architect, QA | CEO / Visionary |
+| GOV-A10 [Project alternatives and selected SDP](../templates/artifacts/software-development-plan.md) | Solution Architect | Solution Architect | Project Manager, Product Owner, Test Architect, QA | CEO / Visionary within the approved envelope; Human owner for out-of-envelope commitments |
 | GOV-A11 [Bounded work assignment and handoff](../templates/artifacts/work-assignment.md) | Project Manager | Project Manager | Target-specific prerequisites | Project Manager |
 | GOV-A12 [Structured review and findings](../templates/artifacts/review-record.md) | target-owner | QA, Application Architect, Test Architect, Solution Architect | Target-specific prerequisites | target-owner |
 | GOV-A13 [Revision-bound approval or rejection](../templates/artifacts/decision-record.md) | target-owner | Human owner, CEO / Visionary, Solution Architect, Product Owner, Project Manager, Application Architect, Test Architect | Target-specific prerequisites | target-owner |
@@ -43,7 +52,7 @@ The Solution Architect owns both system and project design. Under the owner’s 
 | GOV-A19 [Binary phase completion record](../templates/artifacts/phase-exit.md) | Project Manager | Project Manager | Target-specific prerequisites | Project Manager |
 | GOV-A20 [Weekly progress, effort, float, and forecast](../templates/artifacts/progress-report.md) | Project Manager | Project Manager | Solution Architect | Project Manager |
 | GOV-A21 [Leadership dispute and escalation](../templates/artifacts/conflict-record.md) | CEO / Visionary | Project Manager | Solution Architect, Product Owner, Project Manager | CEO / Visionary |
-| GOV-A22 [Prevention and root-cause finding](../templates/artifacts/qa-finding.md) | QA | QA | Solution Architect | QA |
+| GOV-A22 [Prevention and root-cause finding](../templates/artifacts/qa-finding.md) | QA | QA | Solution Architect by default; human-owner-appointed independent reviewer when the SA is implicated or does not respond | QA; escalated response is decided by the human owner |
 | GOV-A23 [Bounded architect instructions to agents](../templates/artifacts/agent-instructions.md) | issuing-architect | Application Architect, Test Architect, Solution Architect | Target-specific prerequisites | issuing-architect within upstream bounds; ceo for solution-architect decisions |
 
 `target-owner` means the accountable/approval route of the reviewed subject; it is not a new universal role. `affected-owner` routes each impacted domain separately. `issuing-architect` means the architect issuing instructions inside its bounds; Solution Architect instructions need CEO approval. An identity acting as a different role does not gain authority beyond its recorded delegation.
@@ -56,11 +65,45 @@ Detailed design requires Solution Architect review before handoff (pp. 376–377
 
 An Application or Test Architect may issue or revise instructions to workers within the supplied bounds. Record the upstream revisions, the intended task, and the impact assessment. Such an instruction cannot change business requirements, component boundaries, technology choices, another owner’s detailed design, test expectations above its authority, or project commitments. The PM’s assignment remains in force.
 
-A change to a higher-level input is a change request to its owner, not a local instruction update. A guideline departure always goes to the human owner with strong, unusual justification; no directive waiver exists. If scope, schedule, cost, dependencies, or resources change, the Solution Architect and PM assess project consequences before the CEO accepts changed commitments within owner bounds.
+A change to a higher-level input is a change request to its owner, not a local instruction update. A guideline departure always goes to the human owner with strong, unusual justification; no directive waiver exists. If scope, schedule, cost, dependencies, or resources change, the Solution Architect and PM assess project consequences before the CEO accepts changed commitments within the approved project envelope.
+
+## Project commitment bounds
+
+Before CEO acceptance of a project's SDP, the human owner approves explicit
+limits for the project's applicable scope, cost, schedule, and resource
+commitments. There are no global numeric caps. Record the limits in
+revision-bound evidence for that project.
+
+Record the human owner's envelope decision using GOV-A13 `accept-artifact` in a
+revision-bound `decision-record` for the exact SDP revision. Identify the human
+owner as decider; limit the reason to approval of the envelope, not selection
+of the project option or acceptance of commitments. The CEO's separate
+`select-project-option` decision references that envelope decision as its
+authority basis.
+
+The CEO accepts the SDP or changed commitments only when the evidence shows
+they fit the approved project envelope. Missing, ambiguous, or exceeded limits
+block CEO acceptance and route the decision to the human owner. In
+human-owner capacity, the owner may reject an out-of-envelope proposal or
+approve a new envelope and commitment through a revision-bound decision. Main
+work remains blocked until the applicable decision is recorded. The Solution
+Architect and PM still assess project consequences and redesign the project as
+required. The CEO's role decision and the human owner's envelope decision are
+separate authority acts, not independent reviews by separate people.
 
 ## Structured reviews
 
 The review record names moderator, owner, scribe, and critics with findings and follow-up (p. 381). These are review functions, not additional leadership offices. The PM schedules and coordinates the review. The accountable owner selects competent technical participants; QA checks process quality and completeness. A contributing author cannot supply its own independent critic position.
+
+QA findings use the SA review route unless the finding implicates the SA or
+the SA does not provide a required response. In either case, QA may escalate
+directly to the human owner, who appoints a competent independent reviewer and
+decides the response. If the human owner / CEO is implicated, QA sends the
+finding directly to the owner in human-owner capacity; the owner cannot
+self-review but retains final decision authority after independent review. If
+no qualified reviewer is available for an owner-implicated finding, hold
+affected work and record the issue as unresolved; unaffected authorized work
+may continue.
 
 A passed review needs resolved blocking findings. A separate authorized decision accepts the subject/action. Implementation Developers and Test Developers never accept their own deliverables. Apply independent critique wherever the subject's review obligations require it; an author cannot manufacture that critique by changing its role claim. Bounded Application/Test Architect instruction updates do not acquire a new CEO-approval gate merely because they are recorded. They retain any review obligations of the actual artifact being changed. The matrix does not require creating a second accountable system architect.
 
@@ -68,7 +111,7 @@ A passed review needs resolved blocking findings. A separate authorized decision
 
 A round is complete only after the Solution Architect, Product Owner, and Project Manager record their positions on the same dispute and the remaining disagreement is summarized. The PM records the round. An incomplete discussion, silence, elapsed time, tool retry, or failed artifact review is not a completed round.
 
-Use at most three completed rounds. If disagreement remains after round three, mark the conflict escalated and route it to the CEO. Earlier escalation is permitted when participants conclude a decision cannot be reached. The CEO decides within delegated bounds; framework/source conflicts or out-of-bounds commitments reach the human owner. Pending escalation does not authorize disputed affected work. Unaffected authorized work may continue.
+Use at most three completed rounds. If disagreement remains after round three, mark the conflict escalated and route it to the CEO. Earlier escalation is permitted when participants conclude a decision cannot be reached. The CEO and human owner are the same human actor, so escalation does not add a separate decision-maker. Identify the authority capacity required: the CEO decides within delegated bounds; framework/source conflicts or out-of-bounds commitments require a human-owner-capacity decision. Pending escalation does not authorize disputed affected work. Unaffected authorized work may continue.
 
 Reviewing source ambiguity is not a three-round vote on whether to obey the book. Preserve both source locators and escalate unresolved source conflicts directly to the human owner.
 

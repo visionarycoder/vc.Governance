@@ -1,0 +1,17 @@
+name: guard-review
+on:
+  schedule:
+    - cron: '0 0 1 */3 *' # first day of every quarter
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Open quarterly guard review issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Quarterly Guard Rules Review" \
+            --body "Please review the current guard definitions (governance‑edit‑guard, markdown‑creation‑ban, artifact‑type‑ban, naming‑enforcement). Close when completed." \
+            --label "quarterly‑review"

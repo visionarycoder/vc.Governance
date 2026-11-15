@@ -127,7 +127,7 @@
     {
       "id": "VALID-17",
       "when": "A change affects schedule, cost, scope, dependencies, or resources",
-      "instruction": "Have SA and PM evaluate project consequences. Obtain CEO acceptance within owner bounds, or human-owner acceptance beyond them, before adopting changed commitments.",
+      "instruction": "Have SA and PM evaluate project consequences. Require explicit human-owner-approved project limits before CEO acceptance of the SDP. Accept changed commitments in CEO capacity only within those exact limits; missing, ambiguous, or exceeded limits block CEO acceptance and require a human-owner-capacity decision.",
       "basis": "Method pp. 194 and 405; GOV-OD02",
       "effect": "local design acceptance does not amend commitments"
     },

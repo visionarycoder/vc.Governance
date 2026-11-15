@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Current Microsoft technical standard"
-description: "Define current Microsoft-based coding policy and the owner’s naming choices."
-document-type: "standard"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Current Microsoft technical standard
+description: Define current Microsoft-based coding policy and the owner’s naming choices.
+document-type: standard
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Current Microsoft technical standard

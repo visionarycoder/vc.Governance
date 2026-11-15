@@ -73,14 +73,16 @@
         "common.independenceVerified",
         "common.upstreamBoundsSatisfied",
         "baseline.ready",
+        "sdp.ownerEnvelopeApproved",
+        "sdp.commitmentAuthorityVerified",
         "sdp.accepted"
       ],
       "not_prerequisites": [],
       "authorized_next_actions": [
         "PM may assign main construction activities against the selected project design."
       ],
-      "failure_or_missing_evidence": "Return project alternatives and commitments to the Solution Architect/PM and management; do not begin main work on an unsigned option.",
-      "decision_route": "GOV-A10",
+      "failure_or_missing_evidence": "Return project alternatives and commitments to the Solution Architect/PM and human owner. The CEO may accept only within explicit project-specific owner-approved limits. Missing or ambiguous limits block acceptance; an out-of-envelope proposal remains blocked until the human owner decides in human-owner capacity and records any revised limits.",
+      "decision_route": "GOV-A10; GOV-A13 for the project envelope and any out-of-envelope decision",
       "phase_exit": null,
       "source": {
         "document": "https://www.amazon.com/dp/0136524036",

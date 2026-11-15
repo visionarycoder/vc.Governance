@@ -1,0 +1,18 @@
+name: Governance Lock
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'docs/**'
+      - 'artifacts/**'
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Enforce governance edit label
+        run: |
+          if [[ "${{ github.event.pull_request.labels }}" != *"governance-edit"* ]]; then
+            echo "::error ::Governance files changed without ‘governance-edit’ label"
+            exit 1
+          fi

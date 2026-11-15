@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Artifact templates"
-description: "Index artifact templates and non-operative draft examples."
-document-type: "index"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Artifact templates
+description: Index artifact templates and non-operative draft examples.
+document-type: index
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Artifact templates
@@ -13,6 +16,10 @@ updated: "2026-11-08"
 Use the [common contract](../../artifacts/README.md), [schema](../../artifacts/schemas/artifact.schema.json), and [decision matrix](../../governance/decision-and-approval-matrix.md). These are governance records; application instances belong in their own repositories.
 
 Each template includes required fields and a fictional draft example. Examples are structurally valid teaching aids with placeholder references, not valid operational evidence.
+
+## Project-local Builder templates
+
+The [local agent Builder templates](../builder/README.md) are Markdown coordination forms for application projects. They are not additional GOV artifact types and do not replace the formal Work Assignment, approved designs, or existing decision records. Follow the [local agent Builder workflow](../../process/local-agent-builder.md).
 
 | Artifact | Template | Example |
 | --- | --- | --- |

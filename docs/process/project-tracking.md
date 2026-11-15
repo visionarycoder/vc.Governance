@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Project tracking"
-description: "Define progress, effort, float monitoring, forecasts, and corrective decisions."
-document-type: "process"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Project tracking
+description: Define progress, effort, float monitoring, forecasts, and corrective decisions.
+document-type: process
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-08
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Project tracking

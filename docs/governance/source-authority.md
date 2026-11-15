@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "Source authority"
-description: "Define governing sources and the rules for resolving source conflicts."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: Source authority
+description: Define governing sources and the rules for resolving source conflicts.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # Source authority
@@ -45,7 +48,7 @@ The human owner supplied the copy used for the recorded review and later removed
 
 An enforcement mechanism must support the standard and the assigned decision rights. It cannot introduce a different design rule or silently alter the development workflow.
 
-The CEO and triumvirate control application-suite decisions within their assigned authority. The human owner controls the governing framework and delegation of authority. Neither leadership status nor ownership of a detailed design permits departure from an adopted Method directive.
+The CEO and triumvirate control application-suite decisions within their assigned authority. The CEO and human owner are the same human actor under distinct authority capacities; the CEO is not an agent. The human owner controls the governing framework and delegation of authority. Escalations reach this human, and the decision record identifies the required capacity. Neither leadership status nor ownership of a detailed design permits departure from an adopted Method directive. See [GOV-OD11–GOV-OD15](owner-decisions-2026-11-11.md).
 
 ## Directives and guidelines
 

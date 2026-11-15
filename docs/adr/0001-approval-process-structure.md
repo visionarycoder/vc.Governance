@@ -1,11 +1,14 @@
 ---
-metadata-version: "1.0.0"
-title: "ADR 0001: Approval process structure"
-description: "Record the adopted approval hierarchy, review sequence, and escalation rules."
-document-type: "governance-policy"
-repository: "vc.Governance"
-language: "Standard Technical English"
-updated: "2026-11-08"
+metadata-version: 1.0.0
+title: ADR 0001: Approval process structure
+description: Record the adopted approval hierarchy, review sequence, and escalation rules.
+document-type: governance-policy
+repository: vc.Governance
+language: Standard Technical English
+updated: 2026-11-11
+version: # VERSION
+1.0.0
+last_updated: 2026-11-14
 ---
 
 # ADR 0001: Approval process structure
@@ -35,7 +38,7 @@ The adopted structure separates accountable ownership, authorship, independent c
 | Project Manager | Work assignment, process execution, progress, and phase records | Is the sole assignment and project-status channel; cannot replace technical approval or accept changed management commitments |
 | Application Architect | Detailed component design, contracts, and bounded implementation instructions | Obtains required Solution Architect review before design handoff; accepts implementation after required critique |
 | Test Architect | System and service test plans, harness design, and verification acceptance | Approves test plans and verification reports after required review; cannot weaken upstream requirements or designs |
-| QA | Defect prevention and process quality | Reports to the Solution Architect; identifies process defects without gaining authority to change upstream bounds |
+| QA | Defect prevention and process quality | Reports to the Solution Architect by default; see [ADR 0004](0004-qa-conflict-escalation.md) for direct escalation when the SA or human owner is implicated |
 | Implementation Developer, Test Developer, and Test Agent | Assigned construction, test development, verification, and critique | Work within approved inputs; implementation and test developers cannot accept their own deliverables |
 
 The Solution Architect, Product Owner, and Project Manager form the leadership triumvirate. Collaboration does not divide whole-system architectural accountability among multiple owners. Role names in records do not authenticate an actor or create delegated authority.
