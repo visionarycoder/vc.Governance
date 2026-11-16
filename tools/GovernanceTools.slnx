@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="governance-validator/GovernanceValidator.csproj" />
+  <Project Path="link-checker/LinkChecker.csproj" />
+</Solution>

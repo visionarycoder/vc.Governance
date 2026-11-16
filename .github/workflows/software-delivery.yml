@@ -14,24 +14,15 @@ jobs:
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
-      - name: Install validator tool
-        run: |
-          dotnet tool install -g SoftwareDelivery.GovernanceValidator --version 1.0.0 || true
-          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet-version: |
+            10.0.x
       - name: Run governance validator
-        run: |
-          GovernanceValidator .
-      - name: Install link checker
-        run: |
-          dotnet tool install -g SoftwareDelivery.LinkChecker --version 1.0.0 || true
-          export PATH="$PATH:$HOME/.dotnet/tools"
+        run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
       - name: Run link health check
-        run: |
-          LinkChecker .
+        run: dotnet run --project tools/link-checker/LinkChecker.csproj -- .
       - name: Upload validation report
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: governance-report
           path: ./validation-report.txt

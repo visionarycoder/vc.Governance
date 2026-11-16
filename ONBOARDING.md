@@ -2,22 +2,14 @@
 
 ## Prerequisites
 - Git installed and access to this repository.
-- .NET 8 SDK (download from https://dotnet.microsoft.com/download)
+- .NET 11 SDK and .NET 8 runtime (download from https://dotnet.microsoft.com/download).
 - A terminal that can run `dotnet` commands (PowerShell, Bash, CMD).
-
-## Install the minimal tooling (once)
-```bash
-# Install the validator and link‑checker as global .NET tools
-dotnet tool install -g SoftwareDelivery.GovernanceValidator --version 1.0.0
-dotnet tool install -g SoftwareDelivery.LinkChecker --version 1.0.0
-```
-> The tools are tiny console apps located under `software-delivery/tools/`. They are installed globally so you can invoke them from any folder.
 
 ## Verify the repository locally
 ```bash
 # From the root of the repo
-GovernanceValidator .
-LinkChecker .
+dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
+dotnet run --project tools/link-checker/LinkChecker.csproj -- .
 ```
 If everything is OK you will see:
 ```

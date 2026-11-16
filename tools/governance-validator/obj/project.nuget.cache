@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xdK70k7+WzE=",
+  "success": true,
+  "projectFilePath": "E:\\dev\\v\\vc.Governance\\tools\\governance-validator\\GovernanceValidator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\visio\\.nuget\\packages\\yamldotnet\\12.0.2\\yamldotnet.12.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
