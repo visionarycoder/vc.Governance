@@ -1,4 +1,5 @@
 ---
+title: change-set-acceptance-criteria
 address: template/acceptance-criteria/change-set
 type: template
 owner: agent/pm

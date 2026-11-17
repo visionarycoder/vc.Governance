@@ -20,7 +20,7 @@ Understand the required behavior and expose architectural pressure without conve
 4. Identify constraints, quality attributes, integrations, and dependencies explicitly stated by authoritative artifacts.
 5. Identify ambiguity or conflict. Escalate requirement questions to the Product Owner rather than reinterpret them.
 6. Record which existing components, contracts, and Surface entries may be affected.
-7. Continue to [[volatility-analysis]].
+7. Continue to volatility-analysis.
 
 ## Prohibited
 - Do not edit requirements.

@@ -50,7 +50,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\visio\\.nuget\\packages": {},
+    "C:\\Users\\visio\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -59,7 +59,7 @@
       "projectUniqueName": "E:\\dev\\v\\vc.Governance\\tools\\governance-validator\\GovernanceValidator.csproj",
       "projectName": "GovernanceValidator",
       "projectPath": "E:\\dev\\v\\vc.Governance\\tools\\governance-validator\\GovernanceValidator.csproj",
-      "packagesPath": "C:\\Users\\visio\\.nuget\\packages",
+      "packagesPath": "C:\\Users\\visio\\.nuget\\packages\\",
       "outputPath": "E:\\dev\\v\\vc.Governance\\tools\\governance-validator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -74,8 +74,9 @@
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Users\\visio\\.nuget\\packages": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -90,7 +91,7 @@
         ]
       },
       "restoreAuditProperties": {
-        "enableAudit": "false",
+        "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
       },

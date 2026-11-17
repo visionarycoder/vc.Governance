@@ -1,4 +1,5 @@
 ---
+title: VERSION
 type: source
 created: 2026-11-15
 updated: 2026-11-15
@@ -20,14 +21,14 @@ The *Global Climate Change Report 2025* is an authoritative synthesis published 
 The report outlines the projected temperature rise under different emissions scenarios, assesses the vulnerability of coastal and arid regions, and evaluates the effectiveness of current mitigation measures. It also highlights the socio‑economic implications of climate adaptation strategies and recommends pathways for transitioning to a low‑carbon economy.
 
 ## Key Entities
-- [[entities/UNFCCC|UNFCCC]]
-- [[entities/WorldBank|World Bank]]
-- [[entities/ClimateActionFund|Climate Action Fund]]
+- [[UNFCCC]]
+- [[WorldBank]]
+- [[ClimateActionFund]]
 
 ## Key Concepts
-- [[concepts/CarbonNeutrality|Carbon Neutrality]]
-- [[concepts/GreenhouseGas|Greenhouse Gas]]
-- [[concepts/AdaptationStrategies|Adaptation Strategies]]
+- [[CarbonNeutrality]]
+- [[GreenhouseGas]]
+- [[AdaptationStrategies]]
 
 ## Main Points
 1. **Temperature Projections** – Under a high‑emissions trajectory, global mean temperatures could rise by 4.3 °C by 2100.  

@@ -1,4 +1,5 @@
 ---
+title: release-acceptance-criteria
 address: template/acceptance-criteria/release
 type: template
 owner: agent/pm

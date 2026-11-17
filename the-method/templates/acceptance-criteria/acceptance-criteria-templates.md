@@ -1,4 +1,5 @@
 ---
+title: acceptance-criteria-templates
 address: template/acceptance-criteria/index
 type: index
 owner: agent/pm
@@ -14,12 +15,12 @@ Use these templates to define objective completion and acceptance conditions bef
 
 ## Templates
 
-- [[acceptance-criteria]]
-- [[developer-acceptance-criteria]]
-- [[application-architect-acceptance-criteria]]
-- [[test-developer-acceptance-criteria]]
-- [[change-set-acceptance-criteria]]
-- [[release-acceptance-criteria]]
+- acceptance-criteria
+- developer-acceptance-criteria
+- application-architect-acceptance-criteria
+- test-developer-acceptance-criteria
+- change-set-acceptance-criteria
+- release-acceptance-criteria
 
 ## Rule
 
@@ -28,6 +29,6 @@ Use these templates to define objective completion and acceptance conditions bef
 
 ## Related
 
-- [[the-method]]
-- [[project-manager-checklist]]
-- [[solution-architect-checklist]]
+- the-method
+- project-manager-checklist
+- solution-architect-checklist

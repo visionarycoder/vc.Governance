@@ -25,5 +25,5 @@ These implementation standards are original operating instructions informed by o
 
 ## Local references
 
-- [[software-delivery-governance]]
-- [[the-method]]
+- software-delivery-governance
+- the-method

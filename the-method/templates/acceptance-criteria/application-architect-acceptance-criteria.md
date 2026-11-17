@@ -1,4 +1,5 @@
 ---
+title: application-architect-acceptance-criteria
 address: template/acceptance-criteria/application-architect
 type: template
 owner: agent/sa

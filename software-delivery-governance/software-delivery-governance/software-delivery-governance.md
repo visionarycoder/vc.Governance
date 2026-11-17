@@ -16,62 +16,62 @@ last_updated: 2026-11-14
 > Defines authority, ownership, orchestration, artifact governance, communication, validation, recovery, and delivery workflows for the software delivery system.
 
 ## Principles
-- [[core-principles]]
-- [[governance-invariants]]
+- core-principles
+- governance-invariants
 
 ## Roles
-- [[ceo]]
-- [[product-owner]]
-- [[project-manager]]
-- [[solution-architect]]
-- [[application-architect]]
-- [[developer]]
-- [[test-architect]]
-- [[test-developer]]
+- ceo
+- product-owner
+- project-manager
+- solution-architect
+- application-architect
+- developer
+- test-architect
+- test-developer
 
 ## Authority
-- [[ownership]]
-- [[authority-and-escalation]]
-- [[implementation-leadership-council]]
-- [[subagents-and-swarms]]
+- ownership
+- authority-and-escalation
+- implementation-leadership-council
+- subagents-and-swarms
 
 ## Infrastructure
-- [[global-addressing]]
-- [[address-resolution]]
-- [[aliases-and-renames]]
-- [[local-ontology]]
-- [[agent-identity-and-persistence]]
-- [[agent-recovery]]
-- [[context-management]]
+- global-addressing
+- address-resolution
+- aliases-and-renames
+- local-ontology
+- agent-identity-and-persistence
+- agent-recovery
+- context-management
 
 ## Artifacts
-- [[artifact-lifecycle]]
-- [[revision-model]]
-- [[change-sets]]
-- [[decision-records]]
-- [[provenance-and-dependency-graph]]
-- [[surface-area]]
+- artifact-lifecycle
+- revision-model
+- change-sets
+- decision-records
+- provenance-and-dependency-graph
+- surface-area
 
 ## Work and Messaging
-- [[work-items]]
-- [[work-lifecycle]]
-- [[work-acceptance]]
-- [[work-sequencing]]
-- [[conflicting-work]]
-- [[messaging-model]]
-- [[message-lifecycle]]
-- [[active-message-queue]]
+- work-items
+- work-lifecycle
+- work-acceptance
+- work-sequencing
+- conflicting-work
+- messaging-model
+- message-lifecycle
+- active-message-queue
 
 ## Validation and Workflows
-- [[governance-validation]]
-- [[rebirth-test]]
-- [[requirement-change]]
-- [[implementation]]
-- [[cross-component-reuse]]
-- [[verification]]
-- [[release]]
-- [[production-feedback]]
+- governance-validation
+- rebirth-test
+- requirement-change
+- implementation
+- cross-component-reuse
+- verification
+- release
+- production-feedback
 
 ## Related Systems
-- [[the-method]]
-- [[implementation-standards]]
+- the-method
+- implementation-standards

@@ -13,7 +13,7 @@ last_updated: 2026-11-14
 # Implementation Standards
 
 > [!abstract] Purpose
-> These standards constrain implementation after the approved System Design and Detailed Design exist. They do not replace [[software-delivery-governance]] or [[the-method]].
+> These standards constrain implementation after the approved System Design and Detailed Design exist. They do not replace software-delivery-governance or the-method.
 
 ## Standards hierarchy
 
@@ -40,41 +40,41 @@ Approved implementation
 ## Index
 
 ### Architecture and organization
-- [[architecture-and-vbd-boundaries]]
-- [[solution-and-project-organization]]
-- [[contracts-and-public-surface]]
-- [[dependency-injection-and-lifetimes]]
+- architecture-and-vbd-boundaries
+- solution-and-project-organization
+- contracts-and-public-surface
+- dependency-injection-and-lifetimes
 
 ### Code quality
-- [[csharp-coding-standard]]
-- [[api-and-library-design]]
-- [[error-handling-and-diagnostics]]
-- [[asynchronous-programming]]
-- [[nullability-and-type-safety]]
-- [[performance-and-resource-management]]
+- csharp-coding-standard
+- api-and-library-design
+- error-handling-and-diagnostics
+- asynchronous-programming
+- nullability-and-type-safety
+- performance-and-resource-management
 
 ### Data, security, and operations
-- [[data-access-standards]]
-- [[security-standards]]
-- [[configuration-and-secrets]]
-- [[observability-standards]]
-- [[serialization-and-compatibility]]
+- data-access-standards
+- security-standards
+- configuration-and-secrets
+- observability-standards
+- serialization-and-compatibility
 
 ### Verification and delivery
-- [[unit-testing-standards]]
-- [[integration-and-black-box-test-support]]
-- [[build-and-continuous-integration]]
-- [[package-and-dependency-management]]
-- [[documentation-standards]]
-- [[definition-of-done]]
+- unit-testing-standards
+- integration-and-black-box-test-support
+- build-and-continuous-integration
+- package-and-dependency-management
+- documentation-standards
+- definition-of-done
 
 ### Framework guidance
-- [[modern-dotnet-guidance]]
-- [[dotnet-framework-guidance]]
-- [[aspdotnet-core-guidance]]
+- modern-dotnet-guidance
+- dotnet-framework-guidance
+- aspdotnet-core-guidance
 
 ### Operational aids
-- [[developer-implementation-checklist]]
-- [[application-architect-review-checklist]]
-- [[implementation-exception-record]]
-- [[sources]]
+- developer-implementation-checklist
+- application-architect-review-checklist
+- implementation-exception-record
+- sources

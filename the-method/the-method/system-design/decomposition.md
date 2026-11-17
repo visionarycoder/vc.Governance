@@ -14,7 +14,7 @@ last_updated: 2026-11-14
 Turn validated volatility into stable component boundaries.
 
 ## SA instructions
-1. Start from [[volatility-analysis]], not from functional requirements grouped by feature.
+1. Start from volatility-analysis, not from functional requirements grouped by feature.
 2. Encapsulate each significant independent volatility behind a stable responsibility boundary.
 3. Minimize reasons for a component to change.
 4. Keep implementation knowledge behind the owning component boundary.

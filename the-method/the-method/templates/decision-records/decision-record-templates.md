@@ -19,16 +19,16 @@ These templates record durable decisions under the authority model defined by th
 
 ## Templates
 
-- [[decision-record]]
-- [[architecture-decision]]
-- [[component-design-decision]]
-- [[requirement-interpretation-decision]]
-- [[cross-component-decision]]
-- [[contract-change-decision]]
-- [[verification-decision]]
-- [[project-planning-decision]]
-- [[conflict-resolution-decision]]
-- [[ceo-override-decision]]
+- decision-record
+- architecture-decision
+- component-design-decision
+- requirement-interpretation-decision
+- cross-component-decision
+- contract-change-decision
+- verification-decision
+- project-planning-decision
+- conflict-resolution-decision
+- ceo-override-decision
 
 ## Rules
 

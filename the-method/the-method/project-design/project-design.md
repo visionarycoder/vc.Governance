@@ -21,10 +21,10 @@ last_updated: 2026-11-14
 - Change Sets and dependencies.
 
 ## Process
-1. [[activities-and-dependencies]]
-2. [[effort-estimation]]
-3. [[project-network]]
-4. [[scheduling-and-risk]]
+1. activities-and-dependencies
+2. effort-estimation
+3. project-network
+4. scheduling-and-risk
 5. Create one governed work item per file.
 6. Assign each work item to the correct persistent agent address.
 7. Sequence work to prevent conflicting modification of authoritative artifacts.

@@ -1,4 +1,5 @@
 ---
+title: developer-acceptance-criteria
 address: template/acceptance-criteria/developer
 type: template
 owner: agent/aa

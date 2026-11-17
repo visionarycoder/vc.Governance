@@ -19,7 +19,7 @@ last_updated: 2026-11-14
 # Contract Change Decision
 
 > [!IMPORTANT]
-> This template records a decision. It does not create authority. Decision authority comes from [[software-delivery-governance]] and the artifact ownership model.
+> This template records a decision. It does not create authority. Decision authority comes from software-delivery-governance and the artifact ownership model.
 
 ## Decision
 
@@ -84,6 +84,6 @@ Explain why the selected option is appropriate.
 
 ## Related
 
-- [[the-method]]
-- [[system-design]]
-- [[project-design]]
+- the-method
+- system-design
+- project-design

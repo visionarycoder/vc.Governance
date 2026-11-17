@@ -1,4 +1,5 @@
 ---
+title: test-developer-acceptance-criteria
 address: template/acceptance-criteria/test-developer
 type: template
 owner: agent/ta

@@ -1,4 +1,5 @@
 ---
+title: solution-architect-checklist
 address: checklist/solution-architect
 artifact-type: checklist
 owner: agent/sa
@@ -12,7 +13,7 @@ last_updated: 2026-11-14
 # Solution Architect Checklist
 
 > [!purpose]
-> Execution gates for the Solution Architect when applying [[the-method]] and producing or changing [[system-design]].
+> Execution gates for the Solution Architect when applying the-method and producing or changing system-design.
 
 ## Requirements Analysis
 
@@ -39,7 +40,7 @@ last_updated: 2026-11-14
 
 ## System Design
 
-- [ ] [[system-design]] is updated.
+- [ ] system-design is updated.
 - [ ] Component responsibilities are documented.
 - [ ] Component interactions are documented.
 - [ ] Required contracts are identified.
@@ -91,14 +92,14 @@ last_updated: 2026-11-14
 
 ## Related
 
-- [[the-method]]
-- [[system-design]]
-- [[requirements-analysis]]
-- [[volatility-analysis]]
-- [[decomposition]]
-- [[structure]]
-- [[composition]]
-- [[design-validation]]
-- [[architecture-decision]]
-- [[cross-component-decision]]
-- [[contract-change-decision]]
+- the-method
+- system-design
+- requirements-analysis
+- volatility-analysis
+- decomposition
+- structure
+- composition
+- design-validation
+- architecture-decision
+- cross-component-decision
+- contract-change-decision

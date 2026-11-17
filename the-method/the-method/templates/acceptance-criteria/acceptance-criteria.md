@@ -1,4 +1,5 @@
 ---
+title: acceptance-criteria
 address: template/acceptance-criteria/general
 type: template
 owner: agent/pm

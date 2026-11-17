@@ -8,7 +8,7 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\visio\\.nuget\\packages": {},
+    "C:\\Users\\visio\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -17,7 +17,7 @@
       "projectUniqueName": "E:\\dev\\v\\vc.Governance\\tools\\link-checker\\LinkChecker.csproj",
       "projectName": "LinkChecker",
       "projectPath": "E:\\dev\\v\\vc.Governance\\tools\\link-checker\\LinkChecker.csproj",
-      "packagesPath": "C:\\Users\\visio\\.nuget\\packages",
+      "packagesPath": "C:\\Users\\visio\\.nuget\\packages\\",
       "outputPath": "E:\\dev\\v\\vc.Governance\\tools\\link-checker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -32,8 +32,9 @@
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Users\\visio\\.nuget\\packages": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -48,7 +49,7 @@
         ]
       },
       "restoreAuditProperties": {
-        "enableAudit": "false",
+        "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
       },

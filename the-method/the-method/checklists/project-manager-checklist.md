@@ -1,4 +1,5 @@
 ---
+title: project-manager-checklist
 address: checklist/project-manager
 artifact-type: checklist
 owner: agent/pm
@@ -93,11 +94,11 @@ last_updated: 2026-11-14
 
 ## Related
 
-- [[the-method]]
-- [[project-design]]
-- [[activities-and-dependencies]]
-- [[effort-estimation]]
-- [[project-network]]
-- [[scheduling-and-risk]]
-- [[project-planning-decision]]
-- [[conflict-resolution-decision]]
+- the-method
+- project-design
+- activities-and-dependencies
+- effort-estimation
+- project-network
+- scheduling-and-risk
+- project-planning-decision
+- conflict-resolution-decision
