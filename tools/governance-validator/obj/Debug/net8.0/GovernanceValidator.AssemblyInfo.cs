@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GovernanceValidator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d5ee421140b770c973171320af37421d01519ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cb4f069c5ecfce34ff5548e632c7c56db89fa44")]
 [assembly: System.Reflection.AssemblyProductAttribute("GovernanceValidator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GovernanceValidator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
