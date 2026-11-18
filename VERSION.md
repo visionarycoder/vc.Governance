@@ -1,5 +1,9 @@
 ---
 title: VERSION
+address: placeholder/VERSION
+owner: agent/pm
+version: 1.0.1
+last_updated: 2026-11-18
 type: source
 created: 2026-11-15
 updated: 2026-11-15

@@ -1,3 +1,11 @@
+---
+title: Onboarding – Software Delivery Governance
+address: placeholder/ONBOARDING
+owner: agent/pm
+version: 1.0.0
+last_updated: 2026-11-18
+---
+
 # ONBOARDING – Software Delivery Governance
 
 ## Prerequisites
