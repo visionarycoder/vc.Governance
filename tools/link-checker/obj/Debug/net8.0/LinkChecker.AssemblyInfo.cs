@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinkChecker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cb4f069c5ecfce34ff5548e632c7c56db89fa44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c936fba8bfaf499dc9a4b4abbb144096cec8f01b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinkChecker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinkChecker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

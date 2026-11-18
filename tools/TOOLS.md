@@ -1,3 +1,11 @@
+---
+title: Governance Tools Repository
+address: governance/tools
+owner: agent/pm
+version: 1.0.0
+last_updated: 2026-11-17
+---
+
 # Governance Tools Repository
 
 This repository contains the command‑line tools used by the **vc.Governance** platform.  The tools are organized as separate .NET projects and are referenced from a single solution file (`GovernanceTools.slnx`).

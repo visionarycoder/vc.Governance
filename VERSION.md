@@ -1,5 +1,9 @@
 ---
 title: VERSION
+address: governance/version
+owner: agent/pm
+version: 1.0.0
+last_updated: 2026-11-17
 type: source
 created: 2026-11-15
 updated: 2026-11-15
