@@ -2,11 +2,11 @@
 title: VERSION
 address: governance/version
 owner: agent/pm
-version: 1.0.0
-last_updated: 2026-11-17
+version: 1.1.0
+last_updated: 2026-11-24
 type: source
 created: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-24
 tags:
 aliases:
   - "Climate 2025 Report"
@@ -14,7 +14,7 @@ aliases:
 ---
 
 
-1.0.1
+1.1.0
 
 # Global Climate Change Report 2025
 

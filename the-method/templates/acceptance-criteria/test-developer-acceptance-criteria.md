@@ -6,8 +6,8 @@ owner: agent/ta
 authority: agent/ta
 aliases: [test-developer-acceptance-criteria]
 tags: [acceptance, criteria, test-developer-acceptance-criteria]
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.1.0
+last_updated: 2026-11-24
 ---
 
 # Test Developer Acceptance Criteria
@@ -18,11 +18,11 @@ last_updated: 2026-11-14
 - Test Developer: `agent/test-dev/...`
 - Test Architect: `agent/ta`
 - Requirement(s):
-- Verification Plan:
+- TA-owned verification design and SA-approved revision:
 
 ## Test Implementation
 
-- [ ] Tests implement the Test Architect's approved verification plan.
+- [ ] Tests implement the TA-owned verification design revision approved at the SA conformance gate.
 - [ ] Required black-box tests are implemented.
 - [ ] Required integration tests are implemented.
 - [ ] Required regression tests are implemented.
@@ -39,5 +39,6 @@ last_updated: 2026-11-14
 
 ## Acceptance
 
+- The Test Architect accepts the resulting test evidence.
 - Status: `pending | accepted | rejected`
 - Accepted By: `agent/ta`
