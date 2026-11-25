@@ -1,0 +1,6 @@
+# Temporary file
+This file was created by the assistant as a placeholder to demonstrate write capability in the vc.Governance repository.
+
+It does not affect any existing governance artifacts.
+
+---

@@ -36,7 +36,7 @@ State the required outcome in observable terms.
 - [ ] Required outcome is present.
 - [ ] Implementation conforms to the referenced authoritative artifacts.
 - [ ] No unauthorized authoritative artifact was modified.
-- [ ] Required validation passes.
+- [ ] Log file contains no un‑redacted PII.
 - [ ] Required documentation and Surface Area entries are current.
 - [ ] Required decision records exist.
 - [ ] Required review is complete.
