@@ -15,7 +15,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            10.0.x
+            8.0.x
+            11.0.x
       - name: Run governance validator
         run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
       - name: Run link health check

@@ -1,8 +1,0 @@
----
-title: decomposition
-address: placeholder/decomposition
-owner: agent/pm
-version: 1.0.0
-last_updated: 2026-11-16
----
-# decomposition

@@ -1,0 +1,11 @@
+{
+  "address": "agent/<role>",
+  "role": "<role-name>",
+  "authority_ref": "role/<role-name>",
+  "governance_version": "<repository version in force>",
+  "last_seq": 0,
+  "last_checkpoint": null,
+  "active_work": [],
+  "open_messages": [],
+  "status": "active"
+}
