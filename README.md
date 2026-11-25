@@ -2,15 +2,14 @@
 title: Software Delivery Governance
 address: governance
 owner: agent/pm
-version: 1.5.0
-last_updated: 2026-11-24
+version: 1.6.0
 ---
 
 # Software Delivery Governance
 
 ![Validation CI](https://github.com/visionarycoder/vc.Governance/actions/workflows/software-delivery.yml/badge.svg)
 
-**Current version: 1.5.0** (see [VERSION.md](VERSION.md))
+**Current version: 1.6.0** (see [VERSION.md](VERSION.md))
 
 ## Purpose
 

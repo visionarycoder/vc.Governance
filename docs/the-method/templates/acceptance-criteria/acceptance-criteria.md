@@ -5,8 +5,8 @@ type: template
 owner: agent/pm
 aliases: [acceptance-criteria]
 tags: [acceptance, acceptance-criteria, criteria]
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.0.1
+last_updated: 2026-11-25
 ---
 
 # Acceptance Criteria
@@ -36,6 +36,7 @@ State the required outcome in observable terms.
 - [ ] Required outcome is present.
 - [ ] Implementation conforms to the referenced authoritative artifacts.
 - [ ] No unauthorized authoritative artifact was modified.
+- [ ] Volatility analysis shows no uncaptured change‑driver crossing component boundaries.
 - [ ] Log file contains no un‑redacted PII.
 - [ ] Required documentation and Surface Area entries are current.
 - [ ] Required decision records exist.

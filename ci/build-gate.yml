@@ -1,0 +1,42 @@
+name: Build Gate
+on: [push]
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+      - name: Run volatility analysis
+        run: |
+          dotnet run --project tools/volatility-analyzer/VolatilityAnalyzer.csproj
+      - name: Run governance validator
+        run: |
+          dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
+      - name: Build gates
+        run: |
+          foreach $gate in Get-ChildItem "../vc.App.Latimessis/tools/Dsuite/AddOns" -Directory {
+            dotnet publish "$gate\$($gate.Name).csproj" -c Release -r win-x64
+          }
+      - name: Execute add‑ons
+        run: |
+          foreach $gate in Get-ChildItem "../vc.App.Latimessis/tools/Dsuite/AddOns" -Directory {
+            & "C:/Program Files/NinjaTrader 8/bin/NinjaTrader.exe" /RunAddOn "$gate\bin\Release\net6.0-windows\win-x64\publish\$($gate.Name).dll"
+          }
+      - name: Verify logs
+        run: |
+          foreach $gate in Get-ChildItem "../vc.App.Latimessis/tools/Dsuite/AddOns" -Directory {
+            $log = "docs/instructions/probe/${gate.Name}-probe-log.txt"
+            if (!(Test-Path $log)) { exit 1 }
+            if ((Get-Content $log | Select-String "PII")) { exit 1 }
+          }
+      - name: Commit decision record
+        run: |
+          git config user.email "ci@github.com"
+          git config user.name "GitHub Actions"
+          echo "---\nDecision: Build Pass for ${{ github.sha }}\n---" > build-validation-decision.md
+          git add build-validation-decision.md
+          git commit -m "Add build validation decision for ${{ github.sha }}"
+          git push

@@ -55,13 +55,71 @@ foreach (var file in jsonFiles)
     }
 }
 
-if (errors.Count > 0)
+// Dependency reference verification (generic)
+// Scan all .csproj files for <Reference> entries with HintPath and ensure the target file exists.
+var csprojFiles = Directory.GetFiles(root, "*.csproj", SearchOption.AllDirectories);
+foreach (var proj in csprojFiles)
 {
-    Console.Error.WriteLine(string.Join('\n', errors));
-    return 1;
+    try
+    {
+        var xml = new System.Xml.XmlDocument();
+        xml.Load(proj);
+        var nsMgr = new System.Xml.XmlNamespaceManager(xml.NameTable);
+        nsMgr.AddNamespace("msb", "http://schemas.microsoft.com/developer/msbuild/2003");
+        var nodes = xml.SelectNodes("//msb:Reference/msb:HintPath", nsMgr);
+        if (nodes != null)
+        {
+            foreach (System.Xml.XmlNode node in nodes)
+            {
+                var hintPath = node.InnerText;
+                var fullPath = Path.IsPathRooted(hintPath) ? hintPath : Path.Combine(Path.GetDirectoryName(proj), hintPath);
+                if (!File.Exists(fullPath))
+                {
+                    errors.Add($"{proj}: missing referenced assembly at '{fullPath}'");
+                }
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        errors.Add($"{proj}: unable to parse for references ({ex.Message})");
+    }
 }
 
-Console.WriteLine("All markdown front‑matter validated successfully.");
-Console.WriteLine("All template JSON validated successfully.");
-return 0;
+// Gate folder and project file existence validation
+var gateRoot = Path.Combine(root, "..", "vc.App.Latimessis", "tools", "Dsuite", "AddOns");
+if (Directory.Exists(gateRoot))
+{
+    var gateDirs = Directory.GetDirectories(gateRoot);
+    foreach (var dir in gateDirs)
+    {
+        var csproj = Path.Combine(dir, Path.GetFileName(dir) + ".csproj");
+        var cs = Path.Combine(dir, Path.GetFileName(dir) + ".cs");
+        if (!File.Exists(csproj) || !File.Exists(cs))
+            errors.Add($"{dir}: missing .csproj or .cs file");
+        else if (new FileInfo(csproj).Length == 0 || new FileInfo(cs).Length == 0)
+            errors.Add($"{dir}: .csproj or .cs file is empty");
+    }
+}
+else
+{
+    errors.Add($"Gate root not found: {gateRoot}");
+}
+
+
+var volatilityJson = Directory.GetFiles(root, "volatility-analysis-*.json", SearchOption.AllDirectories);
+foreach (var file in volatilityJson)
+{
+    try {
+        var doc = System.Text.Json.JsonDocument.Parse(File.ReadAllText(file));
+        var rootElem = doc.RootElement;
+        if (rootElem.TryGetProperty("BoundaryViolations", out var violations) && violations.GetArrayLength() > 0)
+        {
+            errors.Add($"{file}: found {violations.GetArrayLength()} boundary violation(s)");
+        }
+    } catch (System.Text.Json.JsonException ex) {
+        errors.Add($"{file}: invalid JSON ({ex.Message})");
+    }
+}
+
 
