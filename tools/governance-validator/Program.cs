@@ -32,6 +32,29 @@ foreach (var file in files)
     }
 }
 
+var jsonFiles = Directory.GetFiles(root, "*.json*", SearchOption.AllDirectories)
+    .Where(f => (f.EndsWith(".json") || f.EndsWith(".jsonl"))
+        && f.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).Contains("templates")
+        && !f.Contains($"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}"));
+foreach (var file in jsonFiles)
+{
+    if (file.EndsWith(".jsonl"))
+    {
+        var lines = File.ReadAllLines(file);
+        for (var i = 0; i < lines.Length; i++)
+        {
+            if (string.IsNullOrWhiteSpace(lines[i])) continue;
+            try { System.Text.Json.JsonDocument.Parse(lines[i]).Dispose(); }
+            catch (System.Text.Json.JsonException ex) { errors.Add($"{file}:{i + 1}: invalid JSON ({ex.Message})"); }
+        }
+    }
+    else
+    {
+        try { System.Text.Json.JsonDocument.Parse(File.ReadAllText(file)).Dispose(); }
+        catch (System.Text.Json.JsonException ex) { errors.Add($"{file}: invalid JSON ({ex.Message})"); }
+    }
+}
+
 if (errors.Count > 0)
 {
     Console.Error.WriteLine(string.Join('\n', errors));
@@ -39,5 +62,6 @@ if (errors.Count > 0)
 }
 
 Console.WriteLine("All markdown front‑matter validated successfully.");
+Console.WriteLine("All template JSON validated successfully.");
 return 0;
 

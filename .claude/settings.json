@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "echo Governance repo: start at .agents/README.md, docs live in docs/. Validate with the tools in tools/ before finishing." }
+        ]
+      }
+    ]
+  }
+}

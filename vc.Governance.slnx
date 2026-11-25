@@ -1,0 +1,45 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+    <File Path="VERSION.md" />
+    <File Path="AGENTS.md" />
+    <File Path="CLAUDE.md" />
+    <File Path="GEMINI.md" />
+  </Folder>
+  <Folder Name="/.agents/">
+    <File Path=".agents/README.md" />
+  </Folder>
+  <Folder Name="/.github/">
+    <File Path=".github/copilot-instructions.md" />
+    <File Path=".github/workflows/software-delivery.yml" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs/ONBOARDING.md" />
+  </Folder>
+  <Folder Name="/docs/software-delivery-governance/">
+    <File Path="docs/software-delivery-governance/software-delivery-governance.md" />
+  </Folder>
+  <Folder Name="/docs/the-method/">
+    <File Path="docs/the-method/the-method.md" />
+  </Folder>
+  <Folder Name="/docs/implementation-standards/">
+    <File Path="docs/implementation-standards/implementation-standards.md" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/new-record.sh" />
+  </Folder>
+  <Folder Name="/templates/">
+    <File Path="templates/decision-records/template.md" />
+    <File Path="templates/agent-context/README.md" />
+    <File Path="templates/agent-context/manifest.json" />
+    <File Path="templates/agent-context/event.jsonl" />
+    <File Path="templates/agent-context/checkpoint.json" />
+  </Folder>
+  <Folder Name="/tools/">
+    <File Path="tools/TOOLS.md" />
+    <File Path="tools/global.json" />
+  </Folder>
+  <Project Path="tools/governance-validator/GovernanceValidator.csproj" />
+  <Project Path="tools/link-checker/LinkChecker.csproj" />
+</Solution>

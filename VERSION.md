@@ -2,41 +2,29 @@
 title: VERSION
 address: governance/version
 owner: agent/pm
-version: 1.2.0
+version: 1.5.0
 last_updated: 2026-11-24
-type: source
-created: 2026-11-15
-updated: 2026-11-24
-tags:
-aliases:
-  - "Climate 2025 Report"
-  - "GCCR2025"
 ---
 
+# VERSION
 
-1.2.0
+1.5.0
+This is the version of the **vc.Governance** repository: the software delivery governance framework, the method documents, the implementation standards, and the validation tooling. It is the value shown in the [README](README.md).
 
-# Global Climate Change Report 2025
+## Versioning rules
 
-## Source
-The *Global Climate Change Report 2025* is an authoritative synthesis published by the Intergovernmental Panel on Climate Change (IPCC) that consolidates the latest scientific findings, policy developments, and economic analyses related to climate change.
+- The version follows `MAJOR.MINOR.PATCH`.
+- **MAJOR** – a change to governance authority, roles, or artifact ownership that alters how existing work is governed.
+- **MINOR** – new or restructured framework content, standards, or tooling capability (for example moving content under `docs/` or adding agent entry points).
+- **PATCH** – corrections, clarifications, and link or formatting fixes.
+- When the version changes, update this file, the `version` and `last_updated` front matter of `README.md`, and any document whose content changed.
 
-## Core Content
-The report outlines the projected temperature rise under different emissions scenarios, assesses the vulnerability of coastal and arid regions, and evaluates the effectiveness of current mitigation measures. It also highlights the socio‑economic implications of climate adaptation strategies and recommends pathways for transitioning to a low‑carbon economy.
+## Change history
 
-## Key Entities
-- [[UNFCCC]]
-- [[WorldBank]]
-- [[ClimateActionFund]]
-
-## Key Concepts
-- [[CarbonNeutrality]]
-- [[GreenhouseGas]]
-- [[AdaptationStrategies]]
-
-## Main Points
-1. **Temperature Projections** – Under a high‑emissions trajectory, global mean temperatures could rise by 4.3 °C by 2100.  
-2. **Vulnerability Assessment** – Low‑lying islands and arid zones face heightened risks of flooding, drought, and ecosystem collapse.  
-3. **Mitigation Effectiveness** – Current global efforts are insufficient to meet the 1.5 °C target; urgent scaling of renewable energy and carbon removal is essential.  
-4. **Economic Impacts** – The report estimates a potential loss of up to 5 % of global GDP by 2100 if adaptation measures are not accelerated.  
-5. **Policy Recommendations** – Calls for stronger international cooperation, enhanced finance mechanisms, and the integration of climate considerations across all sectors.
+| Version | Date | Summary |
+|---------|------|---------|
+| 1.5.0 | 2026-11-24 | Governance validator also checks that JSON and JSONL files under `templates/` are well-formed. |
+| 1.4.0 | 2026-11-24 | Added `templates/agent-context/` (manifest, event, and checkpoint templates for durable agent context). |
+| 1.3.0 | 2026-11-24 | Added durable context and rehydration-by-address governance (`durable-context-and-rehydration.md`), linked from agent recovery and context management; removed unrelated climate-report notes. |
+| 1.2.0 | 2026-11-24 | Framework Markdown consolidated under `docs/`; duplicate nested folders and placeholder stubs removed; agent entry points (`.agents/`, `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, Copilot instructions) added; tooling guide expanded; `vc.Governance.slnx` added. |
+| 1.0.0 | 2026-11-17 | Initial governance documents, validator and link checker, CI workflow. |

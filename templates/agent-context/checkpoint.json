@@ -1,0 +1,14 @@
+{
+  "address": "agent/<role>",
+  "seq": 0,
+  "ts": "<UTC ISO 8601>",
+  "governance_version": "<repository version in force>",
+  "active_work": [
+    {"address": "work/<area>/<item>", "state": "<work state>"}
+  ],
+  "open_messages": ["msg/<id>"],
+  "knowledge": [
+    {"subject": "<address>", "note": "<durable fact>"}
+  ],
+  "prev_hash": "sha256:<hash of the entry at seq>"
+}

@@ -2,13 +2,62 @@
 title: Governance Tools Repository
 address: governance/tools
 owner: agent/pm
-version: 1.0.0
-last_updated: 2026-11-17
+version: 1.5.0
+last_updated: 2026-11-24
 ---
 
 # Governance Tools Repository
 
 This repository contains the command‑line tools used by the **vc.Governance** platform.  The tools are organized as separate .NET projects and are referenced from a single solution file (`GovernanceTools.slnx`).
+
+---
+
+## The tools at a glance
+
+| Tool | Project | What it checks |
+|------|---------|----------------|
+| Governance validator | `governance-validator/GovernanceValidator.csproj` | Every `*.md` file (recursive, including `README.md`, `docs/`, `.agents/`) starts with a YAML front‑matter block containing `title`, `address`, `owner`, `version`, and `last_updated`. Also checks that every `*.json` and `*.jsonl` file under a `templates/` folder is well‑formed JSON (each line, for JSONL). It does not validate against a schema. |
+| Link checker | `link-checker/LinkChecker.csproj` | Every double‑bracket wikilink resolves to a Markdown file with that name (file name without `.md`, any folder). Regular `[text](path)` links are not checked. |
+
+Both tools take one optional argument, the root folder to scan (default `.`). They print problems to *stderr* as `path: message`, one per line, and exit with `0` on success or `1` if any problem was found, so they can gate CI and pre‑commit checks.
+
+## Quick usage
+
+Run from the **repository root** (not from `tools/`):
+
+```bash
+dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
+dotnet run --project tools/link-checker/LinkChecker.csproj -- .
+```
+
+Success output:
+
+```
+All markdown front‑matter validated successfully.
+All template JSON validated successfully.
+All wikilinks resolved.
+```
+
+To scan only part of the repo, pass a different root, e.g. `-- docs/the-method`. Note that wikilinks are then resolved only against files under that root.
+
+### Typical failures and fixes
+
+| Message | Fix |
+|---------|-----|
+| `missing front‑matter delimiter` | The file must begin with `---`, the YAML block, then a closing `---`. |
+| `invalid JSON` | Fix the syntax in the named template file (line number shown for JSONL). |
+| `missing required key 'owner'` | Add the key to the front matter (all five keys are required). |
+| `broken link` followed by the target | Create a Markdown file with the linked name, or correct the link text. |
+
+### When to run them
+
+- Before every commit that adds or edits Markdown (new docs, decision records, version bumps).
+- Automatically in CI: `.github/workflows/software-delivery.yml` runs both on pushes and pull requests that touch `*.md`.
+- AI agents are instructed to run both before finishing (see `AGENTS.md` and `CLAUDE.md`).
+
+### Requirements
+
+The SDK is pinned in `tools/global.json` (.NET 11 SDK, roll‑forward to the latest minor); the tools target `net8.0`. The validator restores `YamlDotNet` from NuGet on first run.
 
 ---
 
@@ -66,12 +115,12 @@ All projects defined in the solution are compiled and their binaries appear unde
 
 ## Running a tool
 
-Each tool is a self‑contained console application.  After a successful build you can invoke it directly:
+Besides `dotnet run` (see Quick usage), you can invoke the built binaries directly, passing the root folder to scan:
 ```bash
-./governance-validator/bin/Release/net8.0/GovernanceValidator
-./link-checker/bin/Release/net8.0/LinkChecker
+./governance-validator/bin/Release/net8.0/GovernanceValidator ..
+./link-checker/bin/Release/net8.0/LinkChecker ..
 ```
-(Use the appropriate path syntax for your shell – the repository uses forward slashes for consistency.)
+(Paths are relative to `tools/`; on Windows use `GovernanceValidator.exe` and backslashes.)
 
 ---
 
