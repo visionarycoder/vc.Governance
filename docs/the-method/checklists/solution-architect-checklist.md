@@ -87,7 +87,11 @@ last_updated: 2026-11-14
 - [ ] A proposed design violates an approved requirement.
 - [ ] A cross-component conflict cannot be resolved by the affected Application Architects.
 - [ ] Verification and implementation authorities disagree and the conflict cannot be resolved directly.
-- [ ] Governance validation fails.
+- [ ] Service classes expose **generic** async methods (e.g., `FindAsync<T>`). 
+- [ ] For each generic method, a **handler interface** (`IHandler<Req,Res<T>>`) is defined. 
+- [ ] All concrete handlers are **registered** in the DI container and listed in a governance artefact (`handler-registry.yaml`).
+- [ ] The validator is configured to ensure **no missing handler** for any generic method used in the service.
+- [ ] Documentation of the mapping (`T` → `*Handler`) is included in the system-design diagram.
 - [ ] A required CEO or Product Owner decision is missing.
 
 ## Related

@@ -2,7 +2,7 @@
 title: VERSION
 address: governance/version
 owner: agent/pm
-version: 1.6.0
+version: 1.7.1
 last_updated: 2026-11-25
 ---
 
