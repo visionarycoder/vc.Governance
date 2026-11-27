@@ -1,3 +1,15 @@
+---
+title: Governance Enhancements for Build‑Gate Reliability
+address: governance/implementation-gate-recommendations
+type: governance
+owner: agent/pm
+status: active
+tags: [implementation-gate-recommendations, gates, build-validation]
+aliases: [implementation-gate-recommendations]
+version: 1.0.0
+last_updated: 2026-11-27
+---
+
 # Governance Enhancements for Build‑Gate Reliability
 
 ## 1.  New Build‑Validation Decision Template

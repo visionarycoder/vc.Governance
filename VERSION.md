@@ -2,13 +2,13 @@
 title: VERSION
 address: governance/version
 owner: agent/pm
-version: 1.7.1
-last_updated: 2026-11-25
+version: 1.10.0
+last_updated: 2026-11-27
 ---
 
 # VERSION
 
-1.5.0
+1.10.0
 This is the version of the **vc.Governance** repository: the software delivery governance framework, the method documents, the implementation standards, and the validation tooling. It is the value shown in the [README](README.md).
 
 ## Versioning rules
@@ -23,6 +23,12 @@ This is the version of the **vc.Governance** repository: the software delivery g
 
 | Version | Date | Summary |
 |---------|------|---------|
+| 1.10.0 | 2026-11-27 | Clone-detection workflow (surface-area review guidance reused; written code compared for duplicates like Visual Studio Code Clone Detection); implementation plan reviewed and approved before writing code; PM role fulfilled by the coding harness; acceptance verifies shared-code leverage. |
+| 1.9.0 | 2026-11-27 | IFX reuse-escalation workflow (DA → AA → IFX AA → IFX DA, source migration tickets, PM unblock notification); PM ownership of ticket execution flow, work monitoring, and effort restart; zero-cost pause as the block state of a blocked DA, no additional agent phase. |
+| 1.8.0 | 2026-11-25 | Closed component call hierarchy (Client → Manager; Manager → Engine/Access; Engine → Access; Manager ↔ Manager via the message bus as a virtual client); Util component type (`Suite.Util.<Capability>` with durable Application Architect and developer agent); handler-pattern rule for Manager, Engine, and Access components. |
+| 1.7.2 | 2026-11-25 | Added manager-status.md manager completion tracker. |
+| 1.7.1 | 2026-11-25 | Added handler guidance and common-folder ban. |
+| 1.6.0 | 2026-11-25 | Generic dependency checks and governance file updates. |
 | 1.5.0 | 2026-11-24 | Governance validator also checks that JSON and JSONL files under `templates/` are well-formed. |
 | 1.4.0 | 2026-11-24 | Added `templates/agent-context/` (manifest, event, and checkpoint templates for durable agent context). |
 | 1.3.0 | 2026-11-24 | Added durable context and rehydration-by-address governance (`durable-context-and-rehydration.md`), linked from agent recovery and context management; removed unrelated climate-report notes. |

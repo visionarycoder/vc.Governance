@@ -6,8 +6,8 @@ owner: agent/sa
 status: active
 tags: [developer-implementation-checklist, implementation, standards]
 aliases: [developer-implementation-checklist]
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.1.0
+last_updated: 2026-11-27
 ---
 
 # Developer Implementation Checklist
@@ -18,11 +18,14 @@ last_updated: 2026-11-14
 - [ ] Resolve the requirement, design, contract, and Surface Area addresses.
 - [ ] Confirm artifact ownership.
 - [ ] Inspect the existing implementation and relevant suite surface.
+- [ ] Read the Surface Area before building the implementation plan.
+- [ ] Obtain AA review and approval of the implementation plan before writing code.
 - [ ] Confirm that no parallel work modifies the same authoritative artifact.
 
 ## During implementation
 
 - [ ] Make the smallest complete change.
+- [ ] Reuse existing shared code that matches the need instead of duplicating it ([clone detection](../../software-delivery-governance/workflows/clone-detection.md)).
 - [ ] Preserve VBD and component boundaries.
 - [ ] Use approved dependencies and framework targets.
 - [ ] Add or update unit tests.

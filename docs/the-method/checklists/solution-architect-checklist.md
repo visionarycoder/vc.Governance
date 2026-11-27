@@ -6,8 +6,8 @@ owner: agent/sa
 aliases: [solution-architect-checklist]
 tags: [checklist, solution-architect-checklist]
 status: active
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.1.0
+last_updated: 2026-11-25
 ---
 
 # Solution Architect Checklist
@@ -33,7 +33,10 @@ last_updated: 2026-11-14
 
 - [ ] System responsibilities are identified.
 - [ ] Component boundaries follow the approved decomposition.
-- [ ] Manager, Engine, Access, Contracts, and IFX boundaries follow application-suite architecture rules where applicable.
+- [ ] Manager, Engine, Access, Contracts, IFX, and Util boundaries follow application-suite architecture rules where applicable.
+- [ ] Cross-component calls follow the closed call hierarchy (Client → Manager; Manager → Engine/Access; Engine → Access; Manager ↔ Manager only via the message bus with the caller as a virtual client).
+- [ ] Manager, Engine, and Access components use handler patterns internally.
+- [ ] Util components are named `Suite.Util.<Capability>`, contain no business-related content, and have a durable Application Architect and developer agent.
 - [ ] Cross-component coupling is minimized.
 - [ ] Shared implementation is treated as an architectural decision.
 - [ ] Components do not duplicate responsibilities without an explicit decision.

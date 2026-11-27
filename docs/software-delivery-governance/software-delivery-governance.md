@@ -6,8 +6,8 @@ owner: agent/ceo
 status: active
 aliases: [software-delivery-governance]
 tags: [governance, software-delivery-governance]
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.1.0
+last_updated: 2026-11-27
 ---
 
 # Software Delivery Governance
@@ -68,6 +68,8 @@ last_updated: 2026-11-14
 - requirement-change
 - implementation
 - cross-component-reuse
+- ifx-reuse-escalation
+- clone-detection
 - verification
 - release
 - production-feedback

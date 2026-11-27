@@ -1,3 +1,15 @@
+---
+title: Manager Creation Rule
+address: standard/implementation/manager-creation
+type: implementation-standard
+owner: agent/sa
+status: active
+tags: [manager-creation, implementation, standards]
+aliases: [manager-creation]
+version: 1.0.0
+last_updated: 2026-11-27
+---
+
 # Manager Creation Rule
 
 ## Scope

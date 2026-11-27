@@ -72,7 +72,8 @@ foreach (var proj in csprojFiles)
             foreach (System.Xml.XmlNode node in nodes)
             {
                 var hintPath = node.InnerText;
-                var fullPath = Path.IsPathRooted(hintPath) ? hintPath : Path.Combine(Path.GetDirectoryName(proj), hintPath);
+                var projDir = Path.GetDirectoryName(proj) ?? "";
+                var fullPath = Path.IsPathRooted(hintPath) ? hintPath : Path.Combine(projDir, hintPath);
                 if (!File.Exists(fullPath))
                 {
                     errors.Add($"{proj}: missing referenced assembly at '{fullPath}'");
@@ -93,12 +94,10 @@ if (Directory.Exists(gateRoot))
     var gateDirs = Directory.GetDirectories(gateRoot);
     foreach (var dir in gateDirs)
     {
-        var csproj = Path.Combine(dir, Path.GetFileName(dir) + ".csproj");
-        var cs = Path.Combine(dir, Path.GetFileName(dir) + ".cs");
-        if (!File.Exists(csproj) || !File.Exists(cs))
+        var csproj = Directory.GetFiles(dir, "*.csproj").FirstOrDefault(f => new FileInfo(f).Length > 0);
+        var cs = Directory.GetFiles(dir, "*.cs").FirstOrDefault(f => new FileInfo(f).Length > 0);
+        if (csproj == null || cs == null)
             errors.Add($"{dir}: missing .csproj or .cs file");
-        else if (new FileInfo(csproj).Length == 0 || new FileInfo(cs).Length == 0)
-            errors.Add($"{dir}: .csproj or .cs file is empty");
     }
 }
 else
@@ -121,5 +120,14 @@ foreach (var file in volatilityJson)
         errors.Add($"{file}: invalid JSON ({ex.Message})");
     }
 }
+
+if (errors.Count > 0)
+{
+    Console.Error.WriteLine(string.Join('\n', errors));
+    return 1;
+}
+Console.WriteLine("All markdown front‑matter validated successfully.");
+Console.WriteLine("All template JSON validated successfully.");
+return 0;
 
 

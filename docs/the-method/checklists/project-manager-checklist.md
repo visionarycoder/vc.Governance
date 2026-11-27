@@ -6,8 +6,8 @@ owner: agent/pm
 aliases: [project-manager-checklist]
 tags: [checklist, project-manager-checklist]
 status: active
-version: 1.0.0
-last_updated: 2026-11-14
+version: 1.1.0
+last_updated: 2026-11-27
 ---
 
 # Project Manager Checklist
@@ -65,6 +65,10 @@ last_updated: 2026-11-14
 - [ ] Recovery preserves the agent address and authority.
 - [ ] Agent corruption is escalated through the recovery model when necessary.
 - [ ] Messages that identify new work result in PM-created work items when authorized.
+- [ ] The PM owns the execution flow of all tickets and oversees all work efforts as the monitor.
+- [ ] A failed or timed-out agent's effort is restarted by the PM.
+- [ ] A blocked agent in a zero-cost pause is notified by the PM when its block is removed.
+- [ ] A resumed DA rescans the Surface Area and leverages IFX shared code in place of new duplicated code.
 
 ## Acceptance and Completion
 
