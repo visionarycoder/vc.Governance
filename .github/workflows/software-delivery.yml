@@ -15,6 +15,8 @@ jobs:
         run: dotnet build tools/GovernanceTools.slnx --configuration Release
       - name: Run LSI validator tests
         run: dotnet run --project tools/governance-validator/tests/IntegrityValidatorTests.csproj --configuration Release --no-build
+      - name: Validate LSI manifest example
+        run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj --configuration Release --no-build -- --integrity templates/logical-software-integrity/change-set.lsi.json
       - name: Run governance validator
         run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
       - name: Run link health check
