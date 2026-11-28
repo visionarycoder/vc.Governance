@@ -1,11 +1,5 @@
 name: Software Delivery Governance
-on:
-  push:
-    paths:
-      - '**/*.md'
-  pull_request:
-    paths:
-      - '**/*.md'
+on: [push, pull_request]
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -17,6 +11,12 @@ jobs:
           dotnet-version: |
             8.0.x
             11.0.x
+      - name: Build governance tools
+        run: dotnet build tools/GovernanceTools.slnx --configuration Release
+      - name: Run LSI validator tests
+        run: dotnet run --project tools/governance-validator/tests/IntegrityValidatorTests.csproj --configuration Release --no-build
+      - name: Validate LSI manifest example
+        run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj --configuration Release --no-build -- --integrity templates/logical-software-integrity/change-set.lsi.json
       - name: Run governance validator
         run: dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
       - name: Run link health check

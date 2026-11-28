@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="governance-validator/GovernanceValidator.csproj" />
   <Project Path="link-checker/LinkChecker.csproj" />
-  <None Include="docs/design/architecture/enterprise-technology-requirements.md" />
+  <None Include="../docs/design/architecture/enterprise-technology-requirements.md" />
+  <Project Path="governance-validator/tests/IntegrityValidatorTests.csproj" />
 </Solution>
