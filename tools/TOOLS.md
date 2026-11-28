@@ -2,8 +2,8 @@
 title: Governance Tools Repository
 address: governance/tools
 owner: agent/pm
-version: 1.5.0
-last_updated: 2026-11-24
+version: 1.6.0
+last_updated: 2026-11-27
 ---
 
 # Governance Tools Repository
@@ -16,7 +16,8 @@ This repository contains the command‑line tools used by the **vc.Governance** 
 
 | Tool | Project | What it checks |
 |------|---------|----------------|
-| Governance validator | `governance-validator/GovernanceValidator.csproj` | Every `*.md` file (recursive, including `README.md`, `docs/`, `.agents/`) starts with a YAML front‑matter block containing `title`, `address`, `owner`, `version`, and `last_updated`. Also checks that every `*.json` and `*.jsonl` file under a `templates/` folder is well‑formed JSON (each line, for JSONL). It does not validate against a schema. |
+| Governance validator | `governance-validator/GovernanceValidator.csproj` | Every `*.md` file (recursive, including `README.md`, `docs/`, `.agents/`) starts with a YAML front‑matter block containing `title`, `address`, `owner`, `version`, and `last_updated`. Also checks that every `*.json` and `*.jsonl` file under a `templates/` folder is well‑formed JSON (each line, for JSONL). The LSI command validates its required fields and cross-field integrity rules. |
+| LSI manifest validation | `governance-validator/GovernanceValidator.csproj -- --integrity <manifest.json>` | Checks bidirectional requirement links, independent verification, exact revision/hash evidence, syndrome state, correction bounds, and checkpoint freshness. |
 | Link checker | `link-checker/LinkChecker.csproj` | Every double‑bracket wikilink resolves to a Markdown file with that name (file name without `.md`, any folder). Regular `[text](path)` links are not checked. |
 
 Both tools take one optional argument, the root folder to scan (default `.`). They print problems to *stderr* as `path: message`, one per line, and exit with `0` on success or `1` if any problem was found, so they can gate CI and pre‑commit checks.
@@ -28,6 +29,10 @@ Run from the **repository root** (not from `tools/`):
 ```bash
 dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- .
 dotnet run --project tools/link-checker/LinkChecker.csproj -- .
+dotnet build tools/GovernanceTools.slnx --configuration Release
+dotnet run --project tools/governance-validator/tests/IntegrityValidatorTests.csproj --configuration Release
+
+dotnet run --project tools/governance-validator/GovernanceValidator.csproj -- --integrity path/to/change-set.lsi.json
 ```
 
 Success output:
@@ -49,10 +54,14 @@ To scan only part of the repo, pass a different root, e.g. `-- docs/the-method`.
 | `missing required key 'owner'` | Add the key to the front matter (all five keys are required). |
 | `broken link` followed by the target | Create a Markdown file with the linked name, or correct the link text. |
 
-### When to run them
+### LSI test suite
+
+The dependency-free C# test runner invokes the validator against valid and invalid manifests. Build the tools solution first. Governance CI is self-contained and does not require a sibling application checkout.
+
+## When to run them
 
 - Before every commit that adds or edits Markdown (new docs, decision records, version bumps).
-- Automatically in CI: `.github/workflows/software-delivery.yml` runs both on pushes and pull requests that touch `*.md`.
+- Automatically in CI: `.github/workflows/software-delivery.yml` runs the tool build, LSI tests, governance validation, and link check on every push and pull request.
 - AI agents are instructed to run both before finishing (see `AGENTS.md` and `CLAUDE.md`).
 
 ### Requirements

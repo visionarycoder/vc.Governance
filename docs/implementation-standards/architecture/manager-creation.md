@@ -25,7 +25,7 @@ All domain managers – **Analysis**, **Trading**, and **Research** – must be 
 - **Naming**:
   - Interface: `I<Domain>Manager` in `<Domain>.Contract`.
   - Service: `<Domain>Manager` in `<Domain>.Service`.
-  - Namespace: `vc.Latimessis.Component.Manager.<Domain>.Service`.
+  - Namespace: `Component.Manager.<Domain>.Service`.
 - **Dependencies**:
   - Service projects must reference only their corresponding Contract project and domain‑specific dependencies.  No cross‑manager references.
 - **Visibility**:

@@ -1,6 +1,23 @@
 using System.Text.RegularExpressions;
 using YamlDotNet.RepresentationModel;
 
+if (args.Length == 2 && args[0] == "--integrity")
+{
+    var integrityErrors = IntegrityManifestValidator.Validate(args[1]);
+    if (integrityErrors.Count > 0)
+    {
+        Console.Error.WriteLine(string.Join('\n', integrityErrors));
+        return 1;
+    }
+    Console.WriteLine("LSI manifest validated successfully.");
+    return 0;
+}
+if (args.Length > 0 && args[0] == "--integrity")
+{
+    Console.Error.WriteLine("Usage: GovernanceValidator --integrity <manifest.json>");
+    return 2;
+}
+
 string[] requiredKeys = ["title", "address", "owner", "version", "last_updated"];
 var frontMatterRegex = new Regex(@"^---\s*(.*?)\s*---", RegexOptions.Singleline);
 
@@ -86,25 +103,6 @@ foreach (var proj in csprojFiles)
         errors.Add($"{proj}: unable to parse for references ({ex.Message})");
     }
 }
-
-// Gate folder and project file existence validation
-var gateRoot = Path.Combine(root, "..", "vc.App.Latimessis", "tools", "Dsuite", "AddOns");
-if (Directory.Exists(gateRoot))
-{
-    var gateDirs = Directory.GetDirectories(gateRoot);
-    foreach (var dir in gateDirs)
-    {
-        var csproj = Directory.GetFiles(dir, "*.csproj").FirstOrDefault(f => new FileInfo(f).Length > 0);
-        var cs = Directory.GetFiles(dir, "*.cs").FirstOrDefault(f => new FileInfo(f).Length > 0);
-        if (csproj == null || cs == null)
-            errors.Add($"{dir}: missing .csproj or .cs file");
-    }
-}
-else
-{
-    errors.Add($"Gate root not found: {gateRoot}");
-}
-
 
 var volatilityJson = Directory.GetFiles(root, "volatility-analysis-*.json", SearchOption.AllDirectories);
 foreach (var file in volatilityJson)

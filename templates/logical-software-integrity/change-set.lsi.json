@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "changeSet": "changeset/example-001",
+  "gate": "verified",
+  "inputs": [
+    {
+      "address": "requirement/example",
+      "revision": 1,
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-EXAMPLE-001",
+      "input": "requirement/example",
+      "implementedBy": [
+        "IMPL-EXAMPLE-001"
+      ],
+      "verifiedBy": [
+        "TEST-EXAMPLE-001"
+      ]
+    }
+  ],
+  "implementations": [
+    {
+      "id": "IMPL-EXAMPLE-001",
+      "artifact": "component/example@1",
+      "author": "agent/developer",
+      "satisfies": [
+        "REQ-EXAMPLE-001"
+      ]
+    }
+  ],
+  "verifications": [
+    {
+      "id": "TEST-EXAMPLE-001",
+      "artifact": "test/example@1",
+      "verifier": "agent/test-developer",
+      "outcome": "passed",
+      "verifies": [
+        "REQ-EXAMPLE-001"
+      ],
+      "evidence": [
+        {
+          "input": "requirement/example",
+          "revision": 1,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    }
+  ],
+  "syndromes": [],
+  "correction": {
+    "attempts": 0,
+    "maxAttempts": 3,
+    "scope": [],
+    "state": "closed"
+  },
+  "checkpoint": {
+    "state": "valid",
+    "fingerprint": "sha256:ddf7ece1bf90baf8fc80e041e987f4c861f73a13ef22c63356b3fb917580c433"
+  }
+}

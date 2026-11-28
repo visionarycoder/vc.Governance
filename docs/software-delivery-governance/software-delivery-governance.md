@@ -77,3 +77,9 @@ last_updated: 2026-11-27
 ## Related Systems
 - the-method
 - implementation-standards
+
+
+## Integrity
+
+- [Logical Software Integrity](validation/logical-software-integrity.md) defines machine-enforceable Change Set gates.
+- [LSI integration requirements](validation/integration-requirements.md) records follow-up contracts for `vc.Agentic` and `vc.Ifx`.
